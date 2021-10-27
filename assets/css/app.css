@@ -25,7 +25,18 @@ a {
 }
 a:hover {
   transition: .2s;
-  color: rgb(255, 64, 182);
+}
+
+h2 {
+  margin-top: 50px;
+}
+h2::before {
+  content: '[ ';
+  opacity: .4;
+}
+h2::after {
+  content: ' ]';
+  opacity: .4;
 }
 
 blockquote {
@@ -76,6 +87,7 @@ nav > .inner {
 }
 
 nav a {
+  --bkt-opacity: 0;
   display: flex;
   align-items: center;
   color: var(--clr-2);
@@ -83,6 +95,25 @@ nav a {
   height: var(--ui-h);
   padding-left: 1em;
   padding-right: 1em;
+}
+
+nav a::before {
+  content: '[ ';
+  margin-right: .4em;
+  opacity: var(--bkt-opacity);
+  color: rgb(255, 64, 182);
+  transition: .2s;
+}
+nav a::after {
+  content: ' ]';
+  margin-left: .4em;
+  opacity: var(--bkt-opacity);
+  color: rgb(255, 64, 182);
+  transition: .2s;
+}
+
+nav a:hover {
+  --bkt-opacity: 1;
 }
  
 .vid {
