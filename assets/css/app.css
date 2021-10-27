@@ -90,18 +90,18 @@ nav a {
 }
 
 nav a::before {
-  content: '[ ';
+  content: '[';
   margin-right: .4em;
   opacity: var(--bkt-opacity);
   color: rgb(255, 64, 182);
-  transition: .2s;
+  transition: .5s;
 }
 nav a::after {
-  content: ' ]';
+  content: ']';
   margin-left: .4em;
   opacity: var(--bkt-opacity);
   color: rgb(255, 64, 182);
-  transition: .2s;
+  transition: .5s;
 }
 
 nav a:hover {
