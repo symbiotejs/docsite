@@ -6,27 +6,35 @@ import { clrz } from './libs/clrz.js';
 AppRouter.createRouterData('R', {
   home: {
     default: true,
+    title: 'Symbiఠte.js',
     md: 'https://symbiotejs.github.io/symbiote.js/README.md',
   },
   templates: {
+    title: 'Symbiఠte.js | Templates',
     md: './md/Templates.md',
   },
   lifecycle: {
+    title: 'Symbiఠte.js | Lifecycle',
     md: './md/Lifecycle.md',
   },
   context: {
+    title: 'Symbiఠte.js | Data context',
     md: './md/Component_data_context.md',
   },
   attributes: {
+    title: 'Symbiఠte.js | Attributes',
     md: './md/Attribute_binding.md',
   },
   extending: {
+    title: 'Symbiఠte.js | Extending',
     md: './md/Extending.md',
   },
   naming: {
+    title: 'Symbiఠte.js | Naming',
     md: './md/Naming_collisions.md',
   },
   error: {
+    title: 'Ups...',
     isError: true,
   },
 });
