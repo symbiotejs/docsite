@@ -91,7 +91,7 @@ class AppShell extends BaseComponent {
 
 AppShell.template = /*html*/ `
 <nav set="onclick: navClicked">
-  <div>
+  <div class="inner">
     <a href="?home">Symbiఠte.js</a>
     <a href="?templates">Templates</a>
     <a href="?lifecycle">Lifecycle</a>
