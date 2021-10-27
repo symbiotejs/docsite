@@ -68,6 +68,7 @@ nav {
   top: 0;
   bottom: 0;
   padding: 40px;
+  z-index: 10000;
 }
 
 nav > .inner {
@@ -91,6 +92,8 @@ nav a {
   height: 100vh;
   font-size: 80vh;
   font-family: 'NTR', sans-serif;
+  transform: translateY(100px);
+  pointer-events: none;
 }
 
 md-section {
