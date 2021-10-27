@@ -23,6 +23,10 @@ html, body {
 a {
   color: rgb(181, 255, 111);
 }
+a:hover {
+  transition: .2s;
+  color: rgb(255, 64, 182);
+}
 
 blockquote {
   display: block;
