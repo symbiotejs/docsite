@@ -28,15 +28,7 @@ a:hover {
 }
 
 h2 {
-  margin-top: 50px;
-}
-h2::before {
-  content: '[ ';
-  opacity: .4;
-}
-h2::after {
-  content: ' ]';
-  opacity: .4;
+  margin-top: 40px;
 }
 
 blockquote {
