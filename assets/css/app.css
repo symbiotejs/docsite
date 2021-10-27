@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root {
+  --clr-1: rgb(15, 15, 15);
+  --clr-2: rgb(217, 247, 255);
+
+  --ui-h: 38px;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--clr-1);
+  color: var(--clr-2);
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: rgb(181, 255, 111);
+}
+
+code {
+  padding: 4px;
+  background-color: rgba(0, 0, 0, .4);
+  color: rgb(197, 255, 255);
+}
+
+code[class] {
+  display: block;
+  padding: 20px;
+  overflow: auto;
+}
+
+code .hl {
+  color: rgb(138, 136, 255);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  padding: 40px;
+}
+
+nav > .inner {
+  display: grid;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  color: var(--clr-2);
+  text-decoration: none;
+  height: var(--ui-h);
+  padding-left: 1em;
+  padding-right: 1em;
+}
+ 
+.vid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 50vw;
+  background: linear-gradient(var(--clr-2), #ccc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+md-section {
+  display: flex;
+  justify-content: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+md-section > .md {
+  background-color: rgba(255, 255, 255, .05);
+  padding: 40px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 960px;
+  min-height: 100vh;
+}
+
