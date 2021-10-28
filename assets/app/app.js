@@ -64,11 +64,13 @@ class AppShell extends BaseComponent {
   init$ = {
     navClicked: (e) => {
       e.preventDefault();
-      // @ts-ignore
-      let route = e.target.getAttribute('href').replace('?', '');
-      if (route) {
-        AppRouter.applyRoute(route);
-      }
+      let a = e.target.closest('a');
+      if (a) {
+        let route = a.getAttribute('href')?.replace('?', '');
+        if (route) {
+          AppRouter.applyRoute(route);
+        }
+      } 
     },
   }
 
