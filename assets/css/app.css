@@ -69,7 +69,7 @@ code .hl {
   color: rgb(255, 136, 152);
 }
 code .comment {
-  color: rgb(247, 255, 136) !important;
+  color: rgb(247, 255, 136);
   font-style: italic;
 }
 code .extend {
