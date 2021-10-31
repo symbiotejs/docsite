@@ -100,7 +100,6 @@ nav {
   padding-right: var(--ui-h);
   backdrop-filter: blur(var(--blur));
   -webkit-backdrop-filter: blur(var(--blur));
-  background-color: rgba(0, 0, 0, .2);
   outline: none;
 }
 
@@ -198,6 +197,7 @@ md-section .heading svg {
   }
 
   nav {
+    background-color: rgba(0, 0, 0, .2);
     transform: translateX(calc(-100% + 40px));
   }
   nav::after {
