@@ -3,8 +3,14 @@
 :root {
   --clr-1: rgb(15, 15, 15);
   --clr-2: rgb(217, 247, 255);
+  --clr-3: rgb(255, 64, 182);
 
-  --ui-h: 38px;
+  --ui-h: 40px;
+
+  --side-padding: 40px;
+  --nav-width: 240px;
+
+  --blur: 8px;
 }
 
 html, body {
@@ -37,7 +43,7 @@ blockquote {
   margin-bottom: 20px;
   padding: 10px;
   padding-left: 20px;
-  color: rgb(255, 64, 182);
+  color: var(--clr-3);
   background-color: rgba(255, 64, 182, .06);
   border-left: 4px solid currentColor;
 }
@@ -69,8 +75,12 @@ nav {
   position: fixed;
   top: 0;
   bottom: 0;
-  padding: 40px;
   z-index: 10000;
+  transition: .3s;
+  padding-right: var(--ui-h);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  outline: none;
 }
 
 nav > .inner {
@@ -84,7 +94,7 @@ nav a {
   color: var(--clr-2);
   text-decoration: none;
   height: var(--ui-h);
-  padding-left: 1em;
+  padding-left: 2em;
   padding-right: 1em;
 }
 
@@ -92,14 +102,14 @@ nav a::before {
   content: '[';
   margin-right: .4em;
   opacity: var(--bkt-opacity);
-  color: rgb(255, 64, 182);
+  color: var(--clr-3);
   transition: .5s;
 }
 nav a::after {
   content: ']';
   margin-left: .4em;
   opacity: var(--bkt-opacity);
-  color: rgb(255, 64, 182);
+  color: var(--clr-3);
   transition: .5s;
 }
 
@@ -122,8 +132,8 @@ nav a:hover {
 md-section {
   display: flex;
   justify-content: center;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
 }
 
 md-section > .wrapper {
@@ -145,9 +155,40 @@ md-section .heading {
   padding: 1em;
   background-color: rgba(255, 255, 255, .08);
   filter: grayscale(1);
+  overflow: hidden;
 }
 
 md-section .heading svg {
   margin-right: 10px;
+}
+
+@media screen and (max-width: 1300px) {
+  md-section {
+    display: flex;
+    justify-content: center;
+    padding-right: 10px;
+  }
+
+  nav {
+    transform: translateX(calc(-100% + 40px));
+  }
+  nav::after {
+    position: absolute;
+    content: '☰';
+    top: calc(50% - 20px);
+    right: 0;
+    width: var(--ui-h);
+    transition: .2s;
+    display: flex;
+    justify-content: center;
+    color: var(--clr-3);
+    cursor: pointer;
+  }
+  nav:focus-within {
+    transform: none;
+  }
+  nav:focus-within::after {
+    opacity: 0;
+  }
 }
 
