@@ -66,15 +66,28 @@ code[class] {
 }
 
 code .hl {
-  color: rgb(138, 136, 255);
+  color: rgb(255, 136, 152);
+}
+code .comment {
+  color: rgb(247, 255, 136);
+  font-style: italic;
+}
+code .extend {
+  color: rgb(136, 201, 255);
+}
+code .base {
+  color: rgb(136, 255, 182);
+}
+code .class {
+  color: rgb(255, 199, 136);
 }
 
 nav {
+  position: fixed;
   display: flex;
   align-items: center;
-  position: fixed;
   top: 0;
-  bottom: 0;
+  height: 100vh;
   z-index: 10000;
   transition: .3s;
   padding-right: var(--ui-h);
