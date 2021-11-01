@@ -8,37 +8,37 @@ import { clrz } from './libs/clrz.js';
 AppRouter.createRouterData('R', {
   home: {
     default: true,
-    title: 'Symbiఠte.js',
+    title: 'Symbiote.js',
     md: 'https://symbiotejs.github.io/symbiote.js/README.md',
     gh: 'https://github.com/symbiotejs/symbiote.js/blob/main/README.md',
   },
   templates: {
-    title: 'Symbiఠte.js | Templates',
+    title: 'Symbiote.js | Templates',
     md: './md/Templates.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Templates.md',
   },
   lifecycle: {
-    title: 'Symbiఠte.js | Lifecycle',
+    title: 'Symbiote.js | Lifecycle',
     md: './md/Lifecycle.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Lifecycle.md',
   },
   context: {
-    title: 'Symbiఠte.js | Data context',
+    title: 'Symbiote.js | Data context',
     md: './md/Component_data_context.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Component_data_context.md',
   },
   attributes: {
-    title: 'Symbiఠte.js | Attributes',
+    title: 'Symbiote.js | Attributes',
     md: './md/Attribute_binding.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Attribute_binding.md',
   },
   extending: {
-    title: 'Symbiఠte.js | Extending',
+    title: 'Symbiote.js | Extending',
     md: './md/Extending.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Extending.md',
   },
   naming: {
-    title: 'Symbiఠte.js | Naming',
+    title: 'Symbiote.js | Naming',
     md: './md/Naming_collisions.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Naming_collisions.md',
   },
