@@ -12,6 +12,11 @@ AppRouter.createRouterData('R', {
     md: 'https://symbiotejs.github.io/symbiote.js/README.md',
     gh: 'https://github.com/symbiotejs/symbiote.js/blob/main/README.md',
   },
+  installation: {
+    title: 'Symbiote.js | Installation',
+    md: './md/Installation.md',
+    gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Installation.md',
+  },
   templates: {
     title: 'Symbiote.js | Templates',
     md: './md/Templates.md',
