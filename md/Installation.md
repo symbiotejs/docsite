@@ -23,16 +23,6 @@ Getting updates:
 
 `git submodule update --init --recursive --remote`
 
-## Git subtree
-
-Connecting subtree:
-
-`git subtree add --prefix symbiote https://github.com/symbiotejs/symbiote.js.git main --squash`
-
-Getting updates: 
-
-`git subtree pull --prefix symbiote https://github.com/symbiotejs/symbiote.js.git main --squash`
-
 ## CURL
 `mkdir -p symbiote && curl https://uc-jsdk.web.app/build/symbiote.js --output symbiote/symbiote.js`
 
