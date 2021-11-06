@@ -23,6 +23,10 @@ Getting updates:
 
 `git submodule update --init --recursive --remote`
 
+Getting certain revision:
+
+`cd symbiote && git checkout v1.0.0`
+
 ## CURL
 `mkdir -p symbiote && curl https://uc-jsdk.web.app/build/symbiote.js --output symbiote/symbiote.js`
 
