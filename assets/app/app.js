@@ -47,6 +47,11 @@ AppRouter.createRouterData('R', {
     md: './md/Naming_collisions.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Naming_collisions.md',
   },
+  ts: {
+    title: 'Symbiote.js | TypeScript',
+    md: './md/TypeScript.md',
+    gh: 'https://github.com/symbiotejs/docsite/blob/main/md/TypeScript.md',
+  },
   error: {
     title: 'Ups...',
     isError: true,
@@ -140,6 +145,7 @@ AppShell.template = /*html*/ `
     <a href="?attributes">Attributes</a>
     <a href="?extending">Extending</a>
     <a href="?naming">Naming</a>
+    <a href="?ts">TypeScript</a>
     <a href="https://github.com/symbiotejs/symbiote.js" target="_blank">GitHub</a>
   </div> 
 </nav>
