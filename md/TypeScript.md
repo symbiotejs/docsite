@@ -9,6 +9,6 @@ We love TypeScript, but not for it's syntax or transpilation workflow. We believ
 * We don't want to have any excess project rebuilds during development
 * We don't want to fight the own TypeScript [issues](https://github.com/microsoft/TypeScript/issues)
 
-So, we use [JSDoc](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html) type annotations for TypeScript static analysis support.
+So, we use [JSDoc type annotations](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html) for TypeScript static analysis support.
 
 > We planning to add some additional instructions for TypeScript developers in the near future.
