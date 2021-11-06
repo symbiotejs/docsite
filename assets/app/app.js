@@ -133,6 +133,7 @@ AppShell.template = /*html*/ `
 <nav set="onclick: navClicked" tabindex="0">
   <div class="inner">
     <a href="?home">Symbiఠte.js</a>
+    <a href="?installation">Installation</a>
     <a href="?templates">Templates</a>
     <a href="?lifecycle">Lifecycle</a>
     <a href="?context">Data context</a>
