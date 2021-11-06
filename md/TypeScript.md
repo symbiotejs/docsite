@@ -1,6 +1,6 @@
 ## TypeScript
 
-We love TypeScript, but not for it's syntax or transpilation workflow. We believe that type security and type checking is very important for modern web development, but...
+We love TypeScript, but not for it's syntax or transpilation workflow. We believe that type security and type checking tools are very important for modern web development, but...
 
 * we don't want to lose the ability to run our raw code in browser or node runtime directly
 * we don't want to lose the ability to share our ESM source modules to any external JavaScript projects
