@@ -19,7 +19,7 @@ Initial submodule connection:
 
 `git submodule add -b main https://github.com/symbiotejs/symbiote.js.git ./symbiote`
 
-Getting updates: 
+Activation and getting updates: 
 
 `git submodule update --init --recursive --remote`
 
