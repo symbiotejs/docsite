@@ -19,11 +19,11 @@ Initial submodule connection:
 
 `git submodule add -b main https://github.com/symbiotejs/symbiote.js.git ./symbiote`
 
-Activation and getting updates: 
+Activation at the cloned host repository and getting updates: 
 
 `git submodule update --init --recursive --remote`
 
-Getting certain revision:
+Switch to the certain revision:
 
 `cd symbiote && git checkout v1.0.0`
 
@@ -33,11 +33,11 @@ Getting certain revision:
   "scripts": {
     "git-modules": "git submodule update --init --recursive --remote",
     "sym-version": "cd symbiote && git checkout v1.0.0 && cd ..",
-    "setup": "npm run git-modules && npm run sym-version"
+    "setup": "npm run git-modules && npm run sym-version && npm i"
   }
 }
 ```
-Then run `npm run setup`
+Then `npm run setup`
 
 > Git-module approach allows you to put your dependency to any path in project structure you prefer, select branches and versions, create your own branches and use git tooling to manage code more flexible.
 
