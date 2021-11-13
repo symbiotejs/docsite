@@ -221,5 +221,8 @@ md-section .heading svg {
   nav:focus-within::after {
     opacity: 0;
   }
+  md-section .md {
+  padding: 20px;
+}
 }
 

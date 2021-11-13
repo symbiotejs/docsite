@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "scripts": {
+    "wdep-serve": "mkdir -p web_modules && curl https://raw.githubusercontent.com/re4ma/re-serve/main/server/re-server.js --output web_modules/re-server.js",
+    "setup": "npm run wdep-serve",
+    "dev": "node web_modules/re-server.js"
+  }
+}
