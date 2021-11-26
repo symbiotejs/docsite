@@ -16,7 +16,7 @@ So we decided to support some alternative approaches.
 
 ## CURL (recommended)
 
-`mkdir -p symbiote && curl https://symbiotejs.github.io/symbiote.js/build/symbiote.jsdoc.js --output symbiote/symbiote.js`
+`mkdir -p symbiote && curl https://raw.githubusercontent.com/symbiotejs/symbiote.js/v1.1.0/build/symbiote.jsdoc.js --output symbiote/symbiote.js`
 
 > The provided path is temporary. We building our own CDN solution for more effective ESM-module sharing. Keep tuned for future updates!
 
@@ -32,7 +32,7 @@ Activation at the cloned host repository and getting updates:
 
 Switch to the certain revision:
 
-`cd symbiote && git checkout v1.0.0`
+`cd symbiote && git checkout v1.1.0`
 
 `package.json` scripts section example:
 ```json
