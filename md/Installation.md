@@ -16,9 +16,19 @@ So we decided to support some alternative approaches.
 
 ## CURL (recommended)
 
-`mkdir -p symbiote && curl https://raw.githubusercontent.com/symbiotejs/symbiote.js/v1.1.0/build/symbiote.jsdoc.js --output symbiote/symbiote.js`
+`mkdir -p symbiote && curl https://raw.githubusercontent.com/symbiotejs/symbiote.js/v1.1.1/build/symbiote.jsdoc.js --output symbiote/symbiote.js`
 
-> The provided path is temporary. We building our own CDN solution for more effective ESM-module sharing. Keep tuned for future updates!
+`package.json` scripts section example:
+```json
+{
+  "scripts": {
+    "dir": "mkdir -p symbiote",
+    "symbiote": "curl https://raw.githubusercontent.com/symbiotejs/symbiote.js/v1.1.1/build/symbiote.jsdoc.js --output symbiote/symbiote.js",
+    "setup": "npm run dir && npm run symbiote"
+  }
+}
+```
+Then `npm run setup`
 
 ## Git submodule
 
@@ -32,14 +42,14 @@ Activation at the cloned host repository and getting updates:
 
 Switch to the certain revision:
 
-`cd symbiote && git checkout v1.1.0`
+`cd symbiote && git checkout v1.1.1`
 
 `package.json` scripts section example:
 ```json
 {
   "scripts": {
     "git-modules": "git submodule update --init --recursive --remote",
-    "sym-version": "cd symbiote && git checkout v1.0.0 && cd ..",
+    "sym-version": "cd symbiote && git checkout v1.1.1 && cd ..",
     "setup": "npm run git-modules && npm run sym-version && npm i"
   }
 }
@@ -48,10 +58,10 @@ Then `npm run setup`
 
 > Git-module approach allows you to put your dependency to any path in project structure you prefer, select branches and versions, create your own branches and use git tooling to manage code more flexible.
 
-## Direct CDN usage
+## Direct connection from the web:
 
 ```js
-import { BaseComponent } from 'https://uc-jsdk.web.app/build/symbiote.js';
+import { BaseComponent } from 'https://symbiotejs.github.io/symbiote.js/build/symbiote.base.min.js';
 ```
 
 > In this case, your type checking tools might lose the access to type declarations. Will update this soon.
