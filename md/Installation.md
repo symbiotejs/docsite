@@ -17,7 +17,7 @@ We contider that `npm` ecosystem has a lot of historical disadvantages:
 * No support for ESM modules from external URLs (CDN located code)
 * Not good for direct publishing at all
 * Not universal module path resolving for node and browsers
-* Common global namespace for all packages
+* Global namespaces for the packages
 * Etc...
 
 So we decided to support some alternative approaches.
@@ -66,7 +66,7 @@ Switch to the certain revision:
 ```
 Then `npm run setup`
 
-### Direct connection from the CDN (more suitable for tests and experiments):
+### Direct connection from the CDN (suitable for tests and experiments):
 
 ```js
 import { BaseComponent } from 'https://unpkg.com/@symbiotejs/symbiote@latest/build/symbiote.base.min.js';
