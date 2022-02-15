@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import { BaseComponent, AppRouter } from 'https://unpkg.com/@symbiotejs/symbiote@1.4.7/build/symbiote.min.js';
+import { BaseComponent, AppRouter } from 'https://unpkg.com/@symbiotejs/symbiote@1.4.8/build/symbiote.min.js';
 import marked from './libs/marked.js';
 import { clrz } from './libs/clrz.js';
 import { SITE_STRUCT } from './struct.js';
