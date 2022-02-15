@@ -1,4 +1,4 @@
-## Extending Simbiote component with template processor
+## Extending Symbiote component with template processor
 
 ```javascript
 const l10nData = {

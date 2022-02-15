@@ -2,7 +2,7 @@
 
 With Symbiote.js you don't need any external state management library. It's easy to connect, but you really just don't need it in most cases.
 
-All components created with Symbiote.js are present in some data context. Some of properties in that context are local and accesible for certain component only. Some of data could be recieved form the one of the parent components in document tree. Some of data could be recieved from the abstract data layers using unique keys. You can organize your application data flow with a high level of flexibility. Let's clarify what does it mean.
+All components created with Symbiote.js are present in some data context. Some of properties in that context are local and accessible for certain component only. Some of data could be received form the one of the parent components in document tree. Some of data could be received from the abstract data layers using unique keys. You can organize your application data flow with a high level of flexibility. Let's clarify what does it mean.
 
 To initiate component's data context, use `init$` property:
 ```javascript
@@ -32,7 +32,7 @@ class MyComponent extends BaseComponent {
 }
 ```
 
-To make synchronous mutiple updates use `set$`:
+To make synchronous multiple updates use `set$`:
 ```javascript
 class MyComponent extends BaseComponent {
   initCallback() {
@@ -65,20 +65,20 @@ class MyComponent extends BaseComponent {
     this.sub('propName', (val) => {
       console.log(val);
     });
-    // ^ this suscription will be automatically removed on component destruction
+    // ^ this subscription will be automatically removed on component destruction
   }
 }
 ```
 
 ## Local context properties
 
-Local data context is assessible for certain component only. This is the simpliest type of data interaction with is very similar to state manipulation approach in meny other solutions. So you might be already know everything you need about it.
+Local data context is accessible for certain component only. This is the simplest type of data interaction with is very similar to state manipulation approach in many other solutions. So you might be already know everything you need about it.
 
 ## Hierarchical context properties
 
-Every Simbiote component - is a Custom Element and represented in document tree as a one of it's elements. Every component could have a parent or child components. And every component able to create common data context for it's own children or any other deep nested component. 
+Every Symbiote component - is a Custom Element and represented in document tree as a one of it's elements. Every component could have a parent or child components. And every component able to create common data context for it's own children or any other deep nested component. 
 
-To create common context for some DOM subtree mannually, use `ctx-name` attribute:
+To create common context for some DOM subtree manually, use `ctx-name` attribute:
 ```html
 <my-widget ctx-name="my-widget-ctx">
   <inner-block></inner-block>
@@ -120,10 +120,10 @@ Named context - is abstract data context accessible with unique key:
 ```javascript
 import { Data } from '../symbiote/core/Data.js';
 
-Data.registerNamedCtx('ctx-name', {
+Data.registerNamedCtx('my-ctx-name', {
   count: 0,
   increment: () => {
-    let ctx = Data.getNamedCtx('ctx-name');
+    let ctx = Data.getNamedCtx('my-ctx-name');
     ctx.pub('count', ++ctx.read('count'));
   },
 });
@@ -131,7 +131,7 @@ Data.registerNamedCtx('ctx-name', {
 class MyComponent extends BaseComponent {}
 
 MyComponent.template /*html*/ `
-  <h2 set="textContent: ctx-name/count"></h2>
-  <button set="onclick: ctx-name/increment">Click me!</button>
+  <h2 set="textContent: my-ctx-name/count"></h2>
+  <button set="onclick: my-ctx-name/increment">Click me!</button>
 `;
 ```

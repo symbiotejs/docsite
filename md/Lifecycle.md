@@ -10,7 +10,7 @@ class MyComponent extends BaseComponent {
   }
 
   connectedCallback() {
-    // NATIVE: Element connected to the DOM. Standars DOM API methods are available.
+    // NATIVE: Element connected to the DOM. Standards DOM API methods are available.
   }
 
   attributeChangedCallback(attrName, oldValue, newValue) {
@@ -18,7 +18,7 @@ class MyComponent extends BaseComponent {
   }
 
   initCallback() {
-    // CUSTOM: Element is connected to DOM. Unlike a "connectedCallback" would be called only once. Data context is availible.
+    // CUSTOM: Element is connected to DOM. Unlike a "connectedCallback" would be called only once. Data context is available.
   }
 
   disconnectedCallback() {
@@ -26,7 +26,7 @@ class MyComponent extends BaseComponent {
   }
 
   destroyCallback() {
-    // CUSTOM: this callback is asynchronously called after the "disconnectedCallback" if component is ready to be destroed. Data subscriptions removed. Memory is cleared. You cannot use this element anymore. If you need  it again - create the new one.
+    // CUSTOM: this callback is asynchronously called after the "disconnectedCallback" if component is ready to be destroyed. Data subscriptions removed. Memory is cleared. You cannot use this element anymore. If you need  it again - create the new one.
   }
 
 }
@@ -37,7 +37,7 @@ For the most simple cases, you will need custom `initCallback` only. Here you ca
 class MyComponent extends BaseComponent {
   initCallback() {
     this.sub('propName', (propValue) => {
-      this.ref.someOtputElement.textContent = propValue;
+      this.ref.someOutputElement.textContent = propValue;
     });
   }
 }

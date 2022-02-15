@@ -4,15 +4,19 @@
 
 ## NPM installation from GitHub repo (good for raw module usage, if needed)
 
-`npm i https://codeload.github.com/symbiotejs/symbiote.js/legacy.tar.gz/v1.1.2`
+`npm i https://codeload.github.com/symbiotejs/symbiote.js/legacy.tar.gz/<VERSION_TAG>`
+
+or, for the actual code snapshot:
+
+`npm i https://github.com/symbiotejs/symbiote.js`
 
 ## Alternatives
 
-We contider that `npm` ecosystem has a lot of historical disadvantages:
+We consider that `npm` ecosystem has a lot of historical disadvantages:
 
 * Common folder in project structure for all types of dependencies.
 * A lot of excess and unused contents in packages
-* Large disk space consuption
+* Large disk space consumption
 * Not optimal for code sharing on granular ESM level
 * No support for ESM modules from external URLs (CDN located code)
 * Not good for direct publishing at all
@@ -26,7 +30,7 @@ So we decided to support some alternative approaches.
 
 `mkdir -p symbiote && curl -L https://unpkg.com/@symbiotejs/symbiote@latest/build/symbiote.jsdoc.js --output symbiote/symbiote.js`
 
-The `-L`-flag means that request should follow redirect from `@latest` to certain latest version, f.e. `1.1.2`.
+The `-L`-flag means that request should follow redirect from `@latest` to certain latest version.
 
 `package.json` scripts section example:
 ```json
@@ -52,14 +56,14 @@ Activation at the cloned host repository and getting updates:
 
 Switch to the certain revision:
 
-`cd symbiote && git checkout <VERSION TAG>`
+`cd symbiote && git checkout <VERSION_TAG>`
 
 `package.json` scripts section example:
 ```json
 {
   "scripts": {
     "git-modules": "git submodule update --init --recursive --remote",
-    "sym-version": "cd symbiote && git checkout v1.1.1 && cd ..",
+    "sym-version": "cd symbiote && git checkout <VERSION_TAG> && cd ..",
     "setup": "npm run git-modules && npm run sym-version && npm i"
   }
 }

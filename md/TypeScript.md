@@ -1,6 +1,6 @@
 ## TypeScript
 
-We love TypeScript, but not for it's syntax or transpilation workflow. We believe that type security and type checking tools are very important for modern web development, but...
+We believe that type security, type checking and static analysis tools are very important for the modern web development, but...
 
 * We don't want to lose the ability to run our raw code in browser or node runtime directly
 * We don't want to lose the ability to share our ESM source modules to any external JavaScript projects
@@ -9,6 +9,8 @@ We love TypeScript, but not for it's syntax or transpilation workflow. We believ
 * We don't want to have any excess project rebuilds during development
 * We don't want to fight the own TypeScript [issues](https://github.com/microsoft/TypeScript/issues)
 
-So, we use [JSDoc type annotations](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html) for TypeScript static analysis support.
+So, we use [JSDoc type annotations](https://www.typescriptlang.org/docs/handbook/intro-to-js-ts.html) for TypeScript static analysis support during development. 
 
-> We planning to add some additional instructions for TypeScript developers in the near future.
+Also we provide type definitions ([*.d.ts files](https://www.typescriptlang.org/docs/handbook/declaration-files/dts-from-js.html)) for the TypeScript projects in our packages.
+
+Check the [JSDoc Reference](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html) page in TypeScript official documentation.
