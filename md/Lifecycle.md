@@ -6,11 +6,11 @@ Symbiote component - is a Custom Element, so it has all [native lifecycle callba
 class MyComponent extends BaseComponent {
   constructor() {
     super();
-    // NATIVE: Element constructor. Element is not present in DOM structure.
+    // NATIVE: Element constructor. Element is not present in the DOM structure.
   }
 
   connectedCallback() {
-    // NATIVE: Element connected to the DOM. Standards DOM API methods are available.
+    // NATIVE: Element connected to the DOM. Standard DOM API methods are available.
   }
 
   attributeChangedCallback(attrName, oldValue, newValue) {
@@ -18,7 +18,7 @@ class MyComponent extends BaseComponent {
   }
 
   initCallback() {
-    // CUSTOM: Element is connected to DOM. Unlike a "connectedCallback" would be called only once. Data context is available.
+    // CUSTOM: Element is connected to the DOM and initiated. Unlike a "connectedCallback" would be called only once. Data context is available.
   }
 
   disconnectedCallback() {

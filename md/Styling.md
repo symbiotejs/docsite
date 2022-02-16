@@ -11,7 +11,7 @@ my-tag > .heading {
 }
 ```
 
-It's recommended to use only one top level shadow root (wrapper) for your application, if you planning to create any kind of embeddable solution:
+It's recommended to use only one top level shadow root (wrapper) for your application, if you planning to create some kind of embeddable solution:
 
 ```js
 class MyWrapper extends BaseComponent {}
@@ -32,7 +32,7 @@ MyWrapper.shadowStyles = /*css*/ `
 `;
 ```
 
-Note that in this case, render function will be called asynchronously. It caused by connecting styles via [Blob URL](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL) and we should wait a bit for resource loading even if nothing is loaded from the network. 
+Note that in this case, render function will be called asynchronously. It caused by connecting styles via [Blob URL](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL) and we should wait a bit for a resource loading even if nothing is loaded from the network. 
 
 For the [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) support, in that case, you should add the `blob:` source to your settings.
 

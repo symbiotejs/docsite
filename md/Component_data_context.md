@@ -22,7 +22,7 @@ class MyComponent extends BaseComponent {
 
 ## $ - is for state
 
-We use `Proxy` based interface to organize access to data. 
+We use `Proxy` based interface to organize access to the data. 
 ```javascript
 class MyComponent extends BaseComponent {
   initCallback() {
@@ -72,11 +72,11 @@ class MyComponent extends BaseComponent {
 
 ## Local context properties
 
-Local data context is accessible for certain component only. This is the simplest type of data interaction with is very similar to state manipulation approach in many other solutions. So you might be already know everything you need about it.
+Local data context is accessible for certain component only. This is the simplest type of data interaction which is very similar to state manipulation approach in many other solutions. So you might be already know everything you need about it.
 
 ## Hierarchical context properties
 
-Every Symbiote component - is a Custom Element and represented in document tree as a one of it's elements. Every component could have a parent or child components. And every component able to create common data context for it's own children or any other deep nested component. 
+Every Symbiote component - is a Custom Element and represented in document tree as a one of it's elements. Every component could have a parent or child components. And every component is able to create common data context for it's own children or any other deep nested component.
 
 To create common context for some DOM subtree manually, use `ctx-name` attribute:
 ```html
@@ -131,7 +131,7 @@ Data.registerNamedCtx('my-ctx-name', {
 class MyComponent extends BaseComponent {}
 
 MyComponent.template /*html*/ `
-  <h2 set="textContent: my-ctx-name/count"></h2>
+  <h2>Count: {{my-ctx-name/count}}</h2>
   <button set="onclick: my-ctx-name/increment">Click me!</button>
 `;
 ```
