@@ -48,6 +48,12 @@ export const SITE_STRUCT = {
     md: './md/Delayed_rendering.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Delayed_rendering.md',
   },
+  control: {
+    menu: 'Control capture',
+    title: 'Symbiote.js | Control capture',
+    md: './md/Control_capture.md',
+    gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Control_capture.md',
+  },
   extending: {
     menu: 'Extending',
     title: 'Symbiote.js | Extending',
