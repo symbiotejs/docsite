@@ -54,6 +54,12 @@ export const SITE_STRUCT = {
     md: './md/Control_capture.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Control_capture.md',
   },
+  data_in_css: {
+    menu: 'Data-in-CSS',
+    title: 'Symbiote.js | Data-in-CSS',
+    md: './md/Data-in-CSS.md',
+    gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Data-in-CSS.md',
+  },
   extending: {
     menu: 'Extending',
     title: 'Symbiote.js | Extending',
