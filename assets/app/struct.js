@@ -42,6 +42,12 @@ export const SITE_STRUCT = {
     md: './md/Styling.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Styling.md',
   },
+  data: {
+    menu: 'Data',
+    title: 'Symbiote.js | Data',
+    md: './md/Data.md',
+    gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Data.md',
+  },
   delayed: {
     menu: 'Delayed rendering',
     title: 'Symbiote.js | Delayed rendering',
