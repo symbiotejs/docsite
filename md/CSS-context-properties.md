@@ -54,7 +54,7 @@ class MyOtherComponent extends BaseComponent {
   }
 
   onclick = () => {
-    // By default, Data-in-CSS property will be connected to external context, so you need to use "*" prefix to access it:
+    // By default, CSS context property will be connected to external context, so you need to use "*" prefix to access it:
     this.$['*--my-configuration-property'] = 'Property is changed!';
   }
 
