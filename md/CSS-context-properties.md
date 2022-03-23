@@ -1,11 +1,11 @@
-## Data-in-CSS
+## CSS context properties
 
-Data-in-CSS - one of the core concepts used in Symbiote.js. It's very simple and powerful.
+CSS context properties - one of the core concepts used in Symbiote.js. It's very simple and powerful.
 
 We have a browser-native ability for providing some abstract context down to the DOM cascade. 
 This is a [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties). They could have any custom values and they are accessible inside the nested shadow roots (if you use them), unlike the other CSS properties. The main purpose of this, is to provide values for element styling. But it could be used for providing some application data values also.
 
-By default, Symbiote.js using Data-in-CSS approach for defining common data-channels and context building. 
+By default, Symbiote.js using CSS context properties approach for defining common data-channels and context building. 
 
 Technically, it looks like this:
 ```html
@@ -24,7 +24,7 @@ Code from above will be rendered as:
 
 So, any nested component has a data-channel name provided, which can be accessed via native DOM API `getComputedStyle` method. It will be used at data-context initialization stage. 
 
-You can create your own Data-in-CSS properties with the following approaches:
+You can create your own CSS context properties with the following approaches:
 ```javascript
 import { BaseComponent } from '@symbiotejs/symbiote';
 

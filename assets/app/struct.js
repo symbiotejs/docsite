@@ -60,11 +60,11 @@ export const SITE_STRUCT = {
     md: './md/Control_capture.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Control_capture.md',
   },
-  data_in_css: {
-    menu: 'Data-in-CSS',
-    title: 'Symbiote.js | Data-in-CSS',
-    md: './md/Data-in-CSS.md',
-    gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Data-in-CSS.md',
+  css_ctx_props: {
+    menu: 'CSS context properties',
+    title: 'Symbiote.js | CSS context properties',
+    md: './md/CSS-context-properties.md',
+    gh: 'https://github.com/symbiotejs/docsite/blob/main/md/CSS-context-properties.md',
   },
   extending: {
     menu: 'Extending',
