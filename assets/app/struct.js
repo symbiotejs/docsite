@@ -60,6 +60,12 @@ export const SITE_STRUCT = {
     md: './md/Control_capture.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Control_capture.md',
   },
+  progressive_: {
+    menu: 'Progressive complexity',
+    title: 'Symbiote.js | Progressive complexity',
+    md: './md/Progressive_complexity.md',
+    gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Progressive_complexity.md',
+  },
   css_ctx_props: {
     menu: 'CSS context properties',
     title: 'Symbiote.js | CSS context properties',
