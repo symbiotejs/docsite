@@ -57,6 +57,7 @@ class AppShell extends BaseComponent {
         if (route) {
           AppRouter.applyRoute(route);
           a.classList.add('visited');
+          a.focus();
         }
       } 
     },

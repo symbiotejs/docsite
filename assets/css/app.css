@@ -97,6 +97,7 @@ app-shell {
 }
 
 nav {
+  --l-bg-clr: rgba(0, 0, 0, 1);
   position: fixed;
   display: flex;
   align-items: center;
@@ -106,10 +107,16 @@ nav {
   box-sizing: border-box;
   z-index: 10000;
   transition: .3s;
-  backdrop-filter: blur(var(--blur));
-  -webkit-backdrop-filter: blur(var(--blur));
   outline: none;
   overflow: auto;
+}
+
+@supports ((-webkit-backdrop-filter: blur(var(--blur))) or (backdrop-filter: blur(var(--blur)))) {
+  nav {
+    --l-bg-clr: rgba(0, 0, 0, .2);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+  }
 }
 
 nav > .inner {
@@ -148,7 +155,6 @@ nav a:hover {
   --bkt-opacity: 1;
 }
 nav a:focus {
-  opacity: 1 !important;
   color: var(--clr-3) !important;
 }
 
@@ -219,7 +225,7 @@ md-section .heading svg {
   }
 
   nav {
-    background-color: rgba(0, 0, 0, .2);
+    background-color: var(--l-bg-clr);
     transform: translateX(calc(-100% + 40px));
     padding-right: var(--ui-h);
     align-items: flex-start;
