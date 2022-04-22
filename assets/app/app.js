@@ -56,6 +56,7 @@ class AppShell extends BaseComponent {
         let route = a.getAttribute('href')?.replace('?', '');
         if (route) {
           AppRouter.applyRoute(route);
+          a.classList.add('visited');
         }
       } 
     },

@@ -4,6 +4,7 @@
   --clr-1: rgb(15, 15, 15);
   --clr-2: rgb(217, 247, 255);
   --clr-3: rgb(255, 64, 182);
+  --clr-4: rgb(132, 200, 255);
 
   --ui-h: 40px;
 
@@ -103,7 +104,6 @@ nav {
   height: 100vh;
   z-index: 10000;
   transition: .3s;
-  padding-right: var(--ui-h);
   backdrop-filter: blur(var(--blur));
   -webkit-backdrop-filter: blur(var(--blur));
   outline: none;
@@ -122,6 +122,7 @@ nav a {
   height: var(--ui-h);
   padding-left: 2em;
   padding-right: 1em;
+  transform-origin: center center;
 }
 
 nav a::before {
@@ -141,6 +142,14 @@ nav a::after {
 
 nav a:hover {
   --bkt-opacity: 1;
+}
+nav a:focus {
+  opacity: 1 !important;
+  color: var(--clr-3) !important;
+}
+
+nav a.visited {
+  color: var(--clr-4);
 }
  
 .vid {
@@ -198,7 +207,7 @@ md-section .heading svg {
   margin-right: 10px;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1350px) {
   md-section {
     display: flex;
     justify-content: center;
@@ -208,6 +217,7 @@ md-section .heading svg {
   nav {
     background-color: rgba(0, 0, 0, .2);
     transform: translateX(calc(-100% + 40px));
+    padding-right: var(--ui-h);
   }
   nav::after {
     position: absolute;
