@@ -34,6 +34,12 @@ a:hover {
 
 h2 {
   margin-top: 40px;
+  color:rgb(136, 255, 182);
+}
+
+h3 {
+  margin-top: 40px;
+  color:rgb(255, 64, 182);
 }
 
 blockquote {
@@ -56,7 +62,7 @@ blockquote > p {
 code {
   padding: 4px;
   background-color: rgba(0, 0, 0, .4);
-  color: rgb(197, 255, 255);
+  color: rgb(172, 205, 255);
 }
 
 code[class] {
