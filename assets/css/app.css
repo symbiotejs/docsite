@@ -102,15 +102,19 @@ nav {
   align-items: center;
   top: 0;
   height: 100vh;
+  max-height: 100vh;
+  box-sizing: border-box;
   z-index: 10000;
   transition: .3s;
   backdrop-filter: blur(var(--blur));
   -webkit-backdrop-filter: blur(var(--blur));
   outline: none;
+  overflow: auto;
 }
 
 nav > .inner {
-  display: grid;
+  padding-top: var(--ui-h);
+  padding-bottom: var(--ui-h);
 }
 
 nav a {
@@ -218,6 +222,7 @@ md-section .heading svg {
     background-color: rgba(0, 0, 0, .2);
     transform: translateX(calc(-100% + 40px));
     padding-right: var(--ui-h);
+    align-items: flex-start;
   }
   nav::after {
     position: absolute;
