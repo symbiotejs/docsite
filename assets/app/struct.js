@@ -54,13 +54,13 @@ export const SITE_STRUCT = {
     md: './md/Delayed_rendering.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Delayed_rendering.md',
   },
-  control: {
+  control_capture: {
     menu: 'Control capture',
     title: 'Symbiote.js | Control capture',
     md: './md/Control_capture.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Control_capture.md',
   },
-  progressive_: {
+  progressive_complexity: {
     menu: 'Progressive complexity',
     title: 'Symbiote.js | Progressive complexity',
     md: './md/Progressive_complexity.md',
