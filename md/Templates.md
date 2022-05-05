@@ -15,13 +15,16 @@ Attribute value syntax based on key/value pairs:
 * As you can see, nested properties are supported: `style.color`.
 * All keys are native object property names. So, they provide direct access to the DOM API.
 
-To bind some property to own element's HTML-attribute use `@` prefix:
+### Attributes
+
+To bind some property to the own element's HTML-attribute use `@` prefix:
 ```html
 <div 
   set="@class: className">
 </div>
 ```
 
+### Contexts
 To bind element to some external data context property, use `*` prefix for property name:
 ```html
 <div 
@@ -38,10 +41,14 @@ Also, to bind element to named (abstract) context, use context name as property 
 
 **More information about data context you can find in "Data context" section.**
 
+### Handlers
+
 Action handler binding is the same as own property:
 ```html
 <input type="text" set="oninput: onTextInput" />
 ```
+
+### Text nodes
 
 Binding to the text nodes is also supported with the same property scheme:
 ```html
@@ -53,6 +60,25 @@ or common context data:
 
 or data from some named context:
 <div>Hello {{profile/name}}!</div>
+```
+
+### Type casting
+
+Inversion:
+```html
+Local property:
+<div set="@hidden: !innerText">{{innerText}}</div>
+
+Common context property:
+<div set="@hidden: !*innerText">{{*innerText}}</div>
+
+Named context property:
+<div set="@hidden: !app/innerText">{{app/innerText}}</div>
+```
+
+Cast to boolean:
+```html
+<div set="@contenteditable: !!innerText">{{innerText}}</div>
 ```
 
 ## Slots
