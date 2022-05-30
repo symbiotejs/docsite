@@ -18,6 +18,12 @@ export const SITE_STRUCT = {
     md: './md/Templates.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Templates.md',
   },
+  list: {
+    menu: 'List rendering',
+    title: 'Symbiote.js | List rendering',
+    md: './md/List_rendering.md',
+    gh: 'https://github.com/symbiotejs/docsite/blob/main/md/List_rendering.md',
+  },
   lifecycle: {
     menu: 'Lifecycle',
     title: 'Symbiote.js | Lifecycle',

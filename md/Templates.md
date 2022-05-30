@@ -127,9 +127,9 @@ class MyComponent extends BaseComponent {
 }
 ```
 
-## Data based rendering
+## Data based templates
 
-Efficient conditional and data based rendering is very case specific. In some cases the best solution is to use simple `innerHTML` approach. HTML parsing is very fast in modern browsers and frequently that's the most performant and convenient way:
+Efficient conditional and data based template rendering is very case specific. In some cases the best solution is to use simple `innerHTML` approach. HTML parsing is very fast in modern browsers and frequently that's the most performant and convenient way:
 ```javascript
 class MyComponent extends BaseComponent {
   init$ = {
@@ -150,4 +150,8 @@ MyComponent.template = /*html*/ `
 <div class="list-wrapper" set="innerHTML: listHtml"></div>
 `;
 ```
-Anyway, this is not a simple question what to prefer for certain case and this section will be completed in near future with more references.
+
+## Dynamic lists
+
+Symbiote.js is supporting dynamic lists rendering and the performant data reconciliation with an unkeyed approach.
+Take a look at the "List rendering" section for more information.
