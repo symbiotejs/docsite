@@ -185,3 +185,7 @@ class MyComponent extends BaseComponent {
 ```
 
 The `null` or `false` in list data value will clear the entire list.
+
+## Live example
+
+https://symbiotejs.github.io/examples/dynamic-list/dynamic-list_ref.html ([source code](https://github.com/symbiotejs/examples/blob/main/dynamic-list/dynamic-list_ref.js))
