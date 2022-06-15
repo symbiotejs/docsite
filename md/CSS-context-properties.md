@@ -24,49 +24,88 @@ Code from above will be rendered as:
 
 So, any nested component has a data-channel name provided, which can be accessed via native DOM API `getComputedStyle` method. It will be used at data-context initialization stage. 
 
-You can create your own CSS context properties with the following approaches:
+You can create your own CSS context properties with the following simple approach:
 ```javascript
 import { BaseComponent } from '@symbiotejs/symbiote';
 
 class MyComponent extends BaseComponent {
 
-  init$ = {
-    text: 'TEXT',
+  // Initialize CSS context property binding and it's possible initial value:
+  cssInit$ = {
+    '--text': 'INITIAL TEXT',
   }
-
-  initCallback() {
-    // Use "getCssData" method to get the actual values:
-    this.$.text = this.getCssData('--my-configuration-property');
-  }
+  // That property will act like other Symbiote context properties, but will be updated from the document CSS or by the Element.style interface call
 
 }
+MyComponent.template = /*html*/ `
+  <div>{{--text}}</div>
+`;
 MyComponent.reg('my-component');
 
+///////////
 
-/////////////////////////////////
-
-
-class MyOtherComponent extends BaseComponent {
-
-  initCallback() {
-    // This will create "--my-configuration-property" in external data context and pass the initial value:
-    this.bindCssData('--my-configuration-property');
-  }
-
-  onclick = () => {
-    // By default, CSS context property will be connected to external context, so you need to use "*" prefix to access it:
-    this.$['*--my-configuration-property'] = 'Property is changed!';
-  }
-
-}
-MyOtherComponent.reg('my-other-component');
+// Note, that CSS context properties are parsing via JSON.parse method, so, you need to use additional quotes for the text values:
+document.body.style.setProperty('--text', '"MY CSS TEXT"');
+// That will cause the dynamic update for the Symbiote component.
 ```
 
-Of course, you need to provide the initial property value in CSS, somewhere in your document:
+For the initial state creation, use CSS:
 ```css
-body {
-  --my-configuration-property: 'SOME VALUE';
+:root {
+  --text: 'INITIAL TEXT FROM DOCUMENT CSS';
 }
+```
+
+CSS values could be nested or inherited just like the other CSS rules according to their specificity:
+```css
+:root {
+  --text: 'INITIAL TEXT FROM DOCUMENT CSS';
+}
+
+my-component {
+  --text: 'TEXT FOR THE CERTAIN COMPONENT TYPE';
+}
+
+.my-rules {
+  --text: "SOME TEXT BASED ON ELEMENT'S CLASS";
+}
+```
+
+> There are two basic types of data supported:
+1. Strings (should be taken in quotes)
+2. Numbers (as is)
+
+To implement a flag property, use numbers (instead of `true`/`false`):
+```css
+my-component {
+  --app-settings-flag: 1;
+}
+```
+or
+```css
+my-component {
+  --app-settings-flag: 0;
+}
+```
+
+Then you can read those flags in your application. 
+
+In the following example, you can see the CSS context property binding to the elements attribute and the type casting (to `Boolean`) for it:
+```js
+import { BaseComponent } from '@symbiotejs/symbiote';
+
+class MyComponent extends BaseComponent {
+
+  cssInit$ = {
+    '--text': 'INITIAL TEXT',
+    '--hidden': 0,
+  }
+
+}
+MyComponent.template = /*html*/ `
+  <div set="@hidden: !!--hidden">{{--text}}</div>
+`;
+MyComponent.reg('my-component');
 ```
 
 This helps to create and provide complex configurations for application components, widgets and micro-frontends with ease.

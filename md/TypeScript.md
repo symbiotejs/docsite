@@ -8,7 +8,6 @@ We believe that type security, type checking and static analysis tools are very 
 * We don't want to lose the ability to debug or test our raw code without any additional transpilation setup
 * We don't want to have any excess project rebuilds during development
 * We don't want to fight the own TypeScript [issues](https://github.com/microsoft/TypeScript/issues)
-* We want to have a types information while debugging in runtime, not at the static analysis only
 
 So, we use [JSDoc type annotations](https://www.typescriptlang.org/docs/handbook/intro-to-js-ts.html) for TypeScript static analysis support during development. 
 
