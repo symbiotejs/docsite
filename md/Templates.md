@@ -81,6 +81,34 @@ Cast to boolean:
 <div set="@contenteditable: !!innerText">{{innerText}}</div>
 ```
 
+## Alternate binding description syntax
+
+As it was mentioned before, Symbiote.js using HTML-templates which are can be processed by 
+the browser "as is", without any pre-processing. That allows to process templates with a native DOM API
+in that moment, when we need it. Also we can generate such templates with any frontend or backend tool
+able to generate HTML. That's why we using syntax based on what native browser parser allows us to do.
+
+It is possible to use separate attributes do describe data bindings:
+```html
+<h1 set
+  -text-content="title"
+  -@class="titleClassName">
+</h1>
+
+<button set
+  -onclick="onButtonClick">
+</button>
+
+<div set
+  -inner_html="contentHtml">
+</div>
+```
+In case of using separate attributes you need to use a `set` attribute to initiate element's attributes processing.
+As you can see in provided example, binding attributes should be prefixed with `-` symbol and transformed 
+into the kebab-case (`textContent` becomes `-text-content`). For the element properties containing upper-case 
+parts, such as `innerHTML`, you can use snake-case (`innerHTML` becomes `-inner_html`). 
+That's because native HTML-attributes are not case sensitive and you cannot use direct property names in HTML.
+
 ## Slots
 
 [Slots](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) allow you to define placeholders in your template that can be filled with any external markup fragment.

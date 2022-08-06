@@ -18,6 +18,12 @@ export const SITE_STRUCT = {
     md: './md/Templates.md',
     gh: 'https://github.com/symbiotejs/docsite/blob/main/md/Templates.md',
   },
+  external_templates: {
+    menu: 'External templates',
+    title: 'Symbiote.js | External templates',
+    md: './md/External_templates.md',
+    gh: 'https://github.com/symbiotejs/docsite/blob/main/md/External_templates.md',
+  },
   list: {
     menu: 'List rendering',
     title: 'Symbiote.js | List rendering',
