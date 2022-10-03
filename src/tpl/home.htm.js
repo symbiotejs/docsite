@@ -1,3 +1,4 @@
+export default /*html*/ `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +12,8 @@
   <meta property="og:title" content="Symbiote.js">
   <meta name="twitter:title" content="Symbiote.js">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%22.15em%22 y=%22.85em%22 fill=%22%23f0f%22 font-size=%22100%22>ఠ</text></svg>">
-  <link rel="stylesheet" href="./assets/css/app.css">
-  <script src="./assets/app/app.js" type="module"></script>
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="./js/index.js" type="module"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RZEGMKNNR"></script>
   <script>
@@ -22,7 +23,6 @@
     gtag('config', 'G-2RZEGMKNNR');
   </script>
 </head>
-<body>
-  <app-shell></app-shell>
-</body>
+<body>HOMEPAGE</body>
 </html>
+`;

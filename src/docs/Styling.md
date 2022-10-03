@@ -60,4 +60,27 @@ MyWrapper.template = /*html*/ `
 
 More information about Shadow DOM styling and it's selectors, you can find [here](https://developer.mozilla.org/en-US/docs/Web/CSS/:host()).
 
+### Root styling
+
+```js
+class MyComponent extends BaseComponent {}
+
+MyComponent.template = /*html*/ `
+  <h2>Heading...</h2>
+  <my-tag></my-tag>
+`;
+
+// This will enable Shadow DOM and connect styles for it:
+MyComponent.rootStyles = /*css*/ `
+  my-component {
+    color: blue;
+  }
+  my-tag {
+    color: red;
+  }
+`;
+
+MyComponent.reg('my-component');
+```
+
 
