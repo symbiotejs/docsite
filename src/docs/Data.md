@@ -1,3 +1,8 @@
+```json
+{
+  "title": "Symbiote.js | Data"
+}
+```
 ## Data
 
 `Data` - is the base class (abstraction) for the data manipulation in Symbiote.js. It implements the [pub/sup](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) pattern and provides an API for the reactive data lifecycle.

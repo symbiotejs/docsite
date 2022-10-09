@@ -1,3 +1,8 @@
+```json
+{
+  "title": "Symbiote.js | Naming"
+}
+```
 ## Custom element naming
 
 One of the weak parts of Custom Elements standard - is a common namespace for all custom tags registered in current runtime. So, if you developing something like widget or library, there is some danger of names collisions in a host application. Let's consider what to do in that case.

@@ -1,3 +1,8 @@
+```json
+{
+  "title": "Symbiote.js | Delayed rendering"
+}
+```
 ## Delayed rendering
 
 In some cases, it's important to take control on rendering flow. For example, you want to render some specified template, taken from some external URL, for the certain place in your document (context). Sounds difficult... But, it's easy to do that with Symbiote: 

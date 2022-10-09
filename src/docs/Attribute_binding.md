@@ -1,3 +1,8 @@
+```json
+{
+  "title": "Symbiote.js | Attributes"
+}
+```
 ## Attribute binding
 
 To process any attribute changes, you can use setters:

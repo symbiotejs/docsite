@@ -1,3 +1,8 @@
+```json
+{
+  "title": "Symbiote.js | CSS context properties"
+}
+```
 ## CSS context properties
 
 CSS context properties - one of the core concepts used in Symbiote.js. It's very simple and powerful.

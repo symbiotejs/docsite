@@ -1,3 +1,8 @@
+```json
+{
+  "title": "Symbiote.js | Control capture"
+}
+```
 ## Control capture
 
 Symbiote-component is able to take control on it's direct DOM children, even they are not a part of component's template. That is very powerful mechanics, which is helpful to implement things like SSR and many of others. Let's clarify how it works.

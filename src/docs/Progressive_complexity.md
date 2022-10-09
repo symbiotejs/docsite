@@ -1,3 +1,8 @@
+```json
+{
+  "title": "Symbiote.js | Progressive complexity"
+}
+```
 # Progressive complexity
 
 **Progressive complexity** - is a one of the core concepts in Symbiote.js philosophy. 

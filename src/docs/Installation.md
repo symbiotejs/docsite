@@ -1,3 +1,8 @@
+```json
+{
+  "title": "Symbiote.js | Installation"
+}
+```
 ## Classic way NPM installation
 
 `npm i @symbiotejs/symbiote`
@@ -25,7 +30,8 @@ Activation at the cloned host repository and getting updates:
 Switch to the certain revision:
 
 `cd symbiote && git checkout <VERSION_TAG>`
-
+<br>
+<br>
 `package.json` scripts section example:
 ```json
 {

@@ -1,3 +1,8 @@
+```json
+{
+  "title": "Symbiote.js | TypeScript"
+}
+```
 ## TypeScript
 
 We believe that type security, type checking and static analysis tools are very important for the modern web development, but...

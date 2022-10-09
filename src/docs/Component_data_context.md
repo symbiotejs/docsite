@@ -1,3 +1,8 @@
+```json
+{
+  "title": "Symbiote.js | Data context"
+}
+```
 ## Data context
 
 With Symbiote.js you don't need any external state management library. It's easy to connect, but you really just don't need it in most cases.

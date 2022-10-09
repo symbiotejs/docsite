@@ -1,3 +1,7 @@
+import header from './header.htm.js';
+import footer from './footer.htm.js';
+import logo from '../svg/logo/index.svg.js';
+
 export default /*html*/ `
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +27,13 @@ export default /*html*/ `
     gtag('config', 'G-2RZEGMKNNR');
   </script>
 </head>
-<body>HOMEPAGE</body>
+<body>
+  <header>${header}</header>
+  <main>
+    <div>${logo}</div>
+    HOMEPAGE
+  </main>
+  <footer>${footer}</footer>
+</body>
 </html>
 `;

@@ -1,3 +1,8 @@
+```json
+{
+  "title": "Symbiote.js | List rendering"
+}
+```
 ## List rendering
 
 ### Using `repeat` attribute

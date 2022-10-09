@@ -1,3 +1,8 @@
+```json
+{
+  "title": "Symbiote.js | External templates"
+}
+```
 ## External templates
 
 Symbiote.js allows to define or to provide customized templates outside the JavaScript runtime 

@@ -1,3 +1,8 @@
+```json
+{
+  "title": "Symbiote.js | Lifecycle"
+}
+```
 ## Component lifecycle
 
 Symbiote component - is a Custom Element, so it has all [native lifecycle callbacks](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#using_the_lifecycle_callbacks). But it also has two custom ones. Let's walk through the most of them:

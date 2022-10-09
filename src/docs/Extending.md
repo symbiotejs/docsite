@@ -1,3 +1,8 @@
+```json
+{
+  "title": "Symbiote.js | Extending"
+}
+```
 ## Extending Symbiote component with template processor
 
 ```javascript

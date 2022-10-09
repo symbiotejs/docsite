@@ -1,3 +1,6 @@
+import code from './code.css.js';
+import layout from './layout.css.js';
+
 export default /*css*/ `
 ::-webkit-scrollbar {
   display: none;
@@ -9,9 +12,10 @@ export default /*css*/ `
   --clr-a1: rgba(0, 0, 0, .6);
   --clr-a2: rgba(0, 0, 0, .4);
   --clr-a3: rgba(0, 0, 0, .2);
-  --clr-a4: rgba(0, 0, 0, .1);
+  --clr-a4: rgba(0, 0, 0, .08);
   --gap-min: 2px;
   --gap-mid: 10px;
+  --gap-mid2: 6px;
   --gap-max: 20px;
   --gap-max: 40px;
   --r1: 6px;
@@ -27,14 +31,6 @@ html, body {
 }
 * {
   box-sizing: border-box;
-}
-code[class] {
-  display: block;
-  padding: var(--gap-max);
-  background-color: var(--clr-2);
-  color: #fff;
-  border-radius: var(--r1);
-  overflow: auto;
 }
 a {
   color: currentColor;
@@ -72,4 +68,11 @@ img {
     --gap-max: 20px;
   }
 }
+
+h2:first-of-type {
+  margin-top: 0;
+}
+
+${code}
+${layout}
 `;

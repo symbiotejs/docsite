@@ -1,3 +1,8 @@
+```json
+{
+  "title": "Symbiote.js | Styling"
+}
+```
 ## Styling
 
 By default, Symbiote-components are don't have a [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) enabled, so they could be styled classic way, with the convenient selectors based on custom tag names:
