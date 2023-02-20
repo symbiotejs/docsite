@@ -16,9 +16,13 @@ ${head('../')}
 <body>
   <data-nav-point location="docs" hidden></data-nav-point>
   <header>${header}</header>
-  <main>
-    <nav>${menuHtml}</nav>
-    <article>{{CONTENT}}</article>
+  <nav tabindex="0">
+    <div class="inner">${menuHtml}</div>
+  </nav>
+  <main sidebar>
+    <column-el>
+      <article>{{CONTENT}}</article>
+    </column-el>
   </main>
   <footer>${footer}</footer>
 </body>

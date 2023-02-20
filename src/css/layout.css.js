@@ -10,10 +10,9 @@ header {
   left: 50%;
   transform: translate(-50%);
   width: 100%;
-  border-radius: var(--r1);
   backdrop-filter: blur(6px);
   background-color: #fff;
-  z-index: 10000;
+  z-index: 100000;
   box-shadow: 0 1px 6px rgba(0, 0, 0, .1);
 }
 
@@ -94,16 +93,6 @@ menu > a[current] {
   --l-color: var(--clr-logo-2);
 }
 
-nav {
-  padding: var(--gap-max);
-  color: var(--clr-2);
-}
-nav > a {
-  display: block;
-  margin-bottom: var(--gap-mid);
-  text-decoration: none;
-}
-
 article {
   display: block;
   padding: var(--gap-max);
@@ -111,6 +100,7 @@ article {
   margin-top: var(--gap-max);
   margin-bottom: var(--gap-max);
   box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  overflow: auto;
 }
 article a {
   overflow-wrap: break-word;

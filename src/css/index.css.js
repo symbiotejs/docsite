@@ -1,5 +1,6 @@
 import code from './code.css.js';
 import layout from './layout.css.js';
+import sidebar from './nav.css.js';
 
 export default /*css*/ `
 ::-webkit-scrollbar {
@@ -18,13 +19,20 @@ export default /*css*/ `
   --clr-a2: rgba(0, 0, 0, .4);
   --clr-a3: rgba(0, 0, 0, .2);
   --clr-a4: rgba(0, 0, 0, .08);
+
   --gap-min: 2px;
   --gap-mid: 10px;
   --gap-mid2: 6px;
   --gap-max: 20px;
   --gap-max: 40px;
+
   --r1: 6px;
+
+  --ui-h: 40px;
+
   --col-w: 980px;
+
+  --blur: 6px;
 }
 html, body {
   min-height: 100vh;
@@ -76,4 +84,5 @@ img {
 
 ${code}
 ${layout}
+${sidebar}
 `;

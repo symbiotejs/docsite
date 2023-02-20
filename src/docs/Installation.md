@@ -3,6 +3,7 @@
   "title": "Symbiote.js | Installation"
 }
 ```
+# Installation
 ## NPM
 
 `npm i @symbiotejs/symbiote`
