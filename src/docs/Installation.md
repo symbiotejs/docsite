@@ -3,21 +3,30 @@
   "title": "Symbiote.js | Installation"
 }
 ```
-## Classic way NPM installation
+## NPM
 
 `npm i @symbiotejs/symbiote`
 
 ## Alternatives
 
-### NPM installation from GitHub repo (good for raw module usage, if needed)
+### CDN
 
-`npm i https://codeload.github.com/symbiotejs/symbiote.js/legacy.tar.gz/<VERSION_TAG>`
+```js
+import { BaseComponent } from 'https://esm.sh/@symbiotejs/symbiote@latest/';
+```
 
-or, for the actual code snapshot:
+TypeScript support (my-types.d.ts):
+```ts
+// First, let TypeScript allow all module names starting with "https://". This will suppress TS errors.
+declare module 'https://*';
 
-`npm i https://github.com/symbiotejs/symbiote.js`
+// Second, list out all your dependencies. For every URL, you must map it to its local module.
+declare module 'https://esm.sh/@symbiotejs/symbiote@latest/' {
+  export * from 'symbiote';
+}
+```
 
-### Git submodule (good for the raw module usage, if needed)
+### Git submodule
 
 Initial submodule connection:
 
@@ -44,9 +53,4 @@ Switch to the certain revision:
 ```
 Then `npm run setup`
 
-### Direct connection from the CDN (suitable for tests and experiments, no type checking):
-
-```js
-import { BaseComponent } from 'https://unpkg.com/@symbiotejs/symbiote@latest/build/symbiote.min.js';
-```
 

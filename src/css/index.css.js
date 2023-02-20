@@ -6,9 +6,14 @@ export default /*css*/ `
   display: none;
 }
 :root {
-  --clr-1: #ccc;
+  --clr-1: #e6e6e6;
   --clr-2: #000;
   --clr-hl1: #0ff;
+
+  --clr-logo-1: #00aba9;
+  --clr-logo-2: #c7dd44;
+  --clr-logo-3: #7583aa;
+
   --clr-a1: rgba(0, 0, 0, .6);
   --clr-a2: rgba(0, 0, 0, .4);
   --clr-a3: rgba(0, 0, 0, .2);
@@ -57,7 +62,7 @@ ul > li {
 ul > li::before {
   content: ">";
   color: currentColor;
-  text-shadow: 0 0px 13px currentColor;
+  text-shadow: 0 0 4px var(--clr-logo-1);
   margin-right: var(--gap-mid);
 }
 img {
@@ -67,10 +72,6 @@ img {
   :root {
     --gap-max: 20px;
   }
-}
-
-h2:first-of-type {
-  margin-top: 0;
 }
 
 ${code}

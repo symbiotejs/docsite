@@ -19,7 +19,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "types": ["node"],
-    "noEmit": true
+    "noEmit": true,
+    "maxNodeModuleJsDepth": 2
   },
   "include": ["**/*.js", "types"],
   "exclude": [

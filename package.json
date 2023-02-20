@@ -5,7 +5,7 @@
     "dev": "node ./watch.js"
   },
   "dependencies": {
-    "@jam-do/jam-tools": "^0.0.3",
+    "@jam-do/jam-tools": "^0.0.4",
     "@types/node": "^18.7.23",
     "highlight.js": "^11.6.0",
     "marked": "^4.1.0"

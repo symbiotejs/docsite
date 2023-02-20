@@ -1,3 +1,5 @@
-# Symbiఠte.js docs
+# https://symbiotejs.org/
 
-Check the `./md` folder for details or go to the documentation site: https://symbiotejs.org/
+## Development
+
+Enter `npm run dev`, then go to the `dist` folder.

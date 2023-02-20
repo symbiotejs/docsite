@@ -7,20 +7,20 @@ export const NAV = {
     menuItem: 'Docs',
     link: 'docs/Installation.html',
   },
-  cookbook: {
-    menuItem: 'Cookbook',
-    link: 'cookbook/',
-  },
-  pulse: {
-    menuItem: 'Pulse',
-    link: 'pulse/',
-  },
+  // cookbook: {
+  //   menuItem: 'Cookbook',
+  //   link: 'cookbook/',
+  // },
+  // pulse: {
+  //   menuItem: 'Pulse',
+  //   link: 'pulse/',
+  // },
   community: {
     menuItem: 'Community',
     link: 'community/',
   },
   github: {
-    menuItem: 'GitHub',
+    menuItem: 'GitHub ↗',
     link: 'https://github.com/symbiotejs/symbiote.js',
   },
 };

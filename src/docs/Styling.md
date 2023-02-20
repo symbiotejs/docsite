@@ -67,6 +67,9 @@ More information about Shadow DOM styling and it's selectors, you can find [here
 
 ### Root styling
 
+Root styles setting allow you to add styles to the component's subtree root. 
+Root element will found automatically, it could be parent Shadow DOM or Document itself.
+
 ```js
 class MyComponent extends BaseComponent {}
 
@@ -75,17 +78,17 @@ MyComponent.template = /*html*/ `
   <my-tag></my-tag>
 `;
 
-// This will enable Shadow DOM and connect styles for it:
 MyComponent.rootStyles = /*css*/ `
-  my-component {
+  my-component > h2 {
     color: blue;
   }
-  my-tag {
+  my-component > my-tag {
     color: red;
   }
 `;
 
 MyComponent.reg('my-component');
 ```
+
 
 

@@ -1,37 +1,6 @@
 import fs from 'fs';
 import CFG from './project.cfg.js';
 import { findFiles } from '@jam-do/jam-tools/node/index.js';
-import { applyData, cssMin } from '@jam-do/jam-tools/iso/index.js';
-import { marked } from 'marked';
-import hljs from 'highlight.js';
-import { title2name } from './lib/title2name.js';
-
-const MD_META_OPEN_TOKEN = '```json';
-const MD_META_CLOSE_TOKEN = '```';
-const TMP_SPLITTER = '---|||---SPLIT---|||---';
-
-marked.setOptions({
-  highlight: (code, lang, callback) => {
-    code = hljs.highlight(code, {language: lang}).value;
-    callback && callback(undefined, code);
-  }
-});
-
-/**
- * 
- * @param {String} md 
- * @returns 
- */
-function md2html(md) {
-  return new Promise((resolve, reject) => {
-    marked.parse(md, (err, html) => {
-      if (err) {
-        reject();
-      }
-      resolve(html);
-    });
-  });
-}
 
 /**
  * 
@@ -62,13 +31,22 @@ function fmtPath(path) {
  * @returns {Promise<String>}
  */
 async function impWa(path) {
+  let result = null;
   path = fmtPath(path);
-  try {
-    return (await import(path)).default;
-  } catch (e) {
-    console.log('WRONG WA PATH: ' + path);
-    return null;
+  if (path.includes('/index.js')) {
+    result = fs.readFileSync(path).toString();
+  } else {
+    try {
+      let str = (await import(path)).default;
+      if (str.constructor === Function) {
+        str = str();
+      }
+      result = str;
+    } catch (e) {
+      console.log('WRONG WA PATH: ' + path);
+    }
   }
+  return result;
 }
 
 /**
@@ -80,11 +58,11 @@ async function impWa(path) {
   if (!indexSrc) {
     return;
   }
-  // console.log(indexSrc);
-  let outPath = fmtPath(indexPath)
-    .replace('.js', '')
-    .replace(fmtPath(CFG.sourceFolder), fmtPath(CFG.outputFolder));
-  // console.log(outPath);
+  let outPath = fmtPath(indexPath);
+  if (!outPath.includes('index.js')) {
+    outPath = outPath.replace('.js', '');
+  }
+  outPath = outPath.replace(fmtPath(CFG.sourceFolder), fmtPath(CFG.outputFolder));
   checkDir(outPath.split('index.')[0]);
   fs.writeFileSync(outPath, indexSrc);
 }
