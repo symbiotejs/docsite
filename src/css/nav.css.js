@@ -18,6 +18,7 @@ nav {
   nav {
     background-color: rgba(255, 255, 255, .6);
     backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
     color: #000;
     transform: translateX(calc(-100% + 40px));
     padding-right: var(--ui-h);
