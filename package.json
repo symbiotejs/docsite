@@ -1,8 +1,13 @@
 {
   "type": "module",
   "scripts": {
-    "wdep-serve": "mkdir -p web_modules && curl https://raw.githubusercontent.com/re4ma/re-serve/main/server/re-server.js --output web_modules/re-server.js",
-    "setup": "npm run wdep-serve",
-    "dev": "node web_modules/re-server.js"
+    "build": "node ./build.js",
+    "dev": "node ./watch.js"
+  },
+  "dependencies": {
+    "@jam-do/jam-tools": "^0.0.4",
+    "@types/node": "^18.7.23",
+    "highlight.js": "^11.6.0",
+    "marked": "^4.1.0"
   }
 }
