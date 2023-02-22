@@ -14,7 +14,7 @@ nav {
   overflow: auto;
 }
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 1380px) {
   nav {
     background-color: rgba(255, 255, 255, .6);
     backdrop-filter: blur(var(--blur));
@@ -22,7 +22,7 @@ nav {
     color: #000;
     transform: translateX(calc(-100% + 40px));
     padding-right: var(--ui-h);
-    padding-top: 40px;
+    padding-top: var(--ui-h);
     align-items: flex-start;
   }
   nav::after {
@@ -31,6 +31,7 @@ nav {
     top: calc(50% - 20px);
     right: 0;
     width: var(--ui-h);
+    height: 100%;
     transition: .2s;
     display: flex;
     justify-content: center;
@@ -39,12 +40,14 @@ nav {
   }
   nav:focus-within {
     transform: none;
+    padding-right: 0;
   }
   nav:focus-within::after {
     opacity: 0;
+    pointer-events: none;
   }
   main[sidebar] {
-    padding-left: 40px;
+    padding-left: var(--ui-h);
   }
 }
 
@@ -59,21 +62,21 @@ nav a {
   align-items: center;
   text-decoration: none;
   height: var(--ui-h);
-  padding-left: 2em;
-  padding-right: 1em;
-  transform-origin: center center;
+  padding-left: var(--gap-mid);
+  padding-right: var(--gap-mid);
 }
 
 nav a::before, nav a::after {
-  margin: .4em;
   opacity: var(--bkt-opacity);
   transition: .5s;
 }
 
 nav a::before {
+  margin-right: .4em;
   content: '[';
 }
 nav a::after {
+  margin-left: .4em;
   content: ']';
 }
 
@@ -81,23 +84,10 @@ nav a:hover {
   --bkt-opacity: 1;
 }
 nav a:focus {
-  color: var(--clr-3) !important;
+  color: var(--clr-logo-1) !important;
 }
 
 nav a.visited {
-  color: var(--clr-4);
-}
-
-.vid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  max-height: 100%;
-  width: 100vw;
-  max-width: 100%;
-  padding: 40px;
-  pointer-events: none;
-  overflow: hidden;
+  color: var(--clr-logo-1);
 }
 `;
