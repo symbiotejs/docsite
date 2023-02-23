@@ -5,9 +5,16 @@
     "dev": "node ./watch.js"
   },
   "dependencies": {
+    "@codemirror/lang-html": "^6.4.2",
+    "@codemirror/lang-javascript": "^6.1.4",
     "@jam-do/jam-tools": "^0.0.4",
     "@types/node": "^18.7.23",
+    "codemirror": "^6.0.1",
     "highlight.js": "^11.6.0",
     "marked": "^4.1.0"
+  },
+  "devDependencies": {
+    "@symbiotejs/symbiote": "^1.11.6",
+    "esbuild": "^0.17.10"
   }
 }

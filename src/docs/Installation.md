@@ -13,7 +13,7 @@
 ### CDN
 
 ```js
-import { BaseComponent } from 'https://esm.sh/@symbiotejs/symbiote@latest/';
+import { BaseComponent } from 'https://esm.sh/@symbiotejs/symbiote/';
 ```
 
 TypeScript support (my-types.d.ts):
@@ -22,8 +22,8 @@ TypeScript support (my-types.d.ts):
 declare module 'https://*';
 
 // Second, list out all your dependencies. For every URL, you must map it to its local module.
-declare module 'https://esm.sh/@symbiotejs/symbiote@latest/' {
-  export * from 'symbiote';
+declare module 'https://esm.sh/@symbiotejs/symbiote/' {
+  export * from '@symbiotejs/symbiote';
 }
 ```
 

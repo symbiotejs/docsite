@@ -1,6 +1,7 @@
 import fs from 'fs';
 import CFG from './project.cfg.js';
 import { findFiles } from '@jam-do/jam-tools/node/index.js';
+import esbuild from 'esbuild';
 
 /**
  * 
@@ -34,7 +35,19 @@ async function impWa(path) {
   let result = null;
   path = fmtPath(path);
   if (path.includes('/index.js')) {
-    result = fs.readFileSync(path).toString();
+    let buildResult = esbuild.buildSync({
+      entryPoints: [path],
+      format: 'esm',
+      bundle: true,
+      minify: true,
+      sourcemap: false,
+      // outfile: buildItem.out,
+      target: 'es2019',
+      write: false,
+    });
+    // console.log('BUILD RESULT:');
+    // console.log(buildResult.outputFiles[0].text);
+    result = buildResult.outputFiles[0].text;
   } else {
     try {
       let str = (await import(path)).default;
