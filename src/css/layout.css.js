@@ -62,9 +62,11 @@ column-el {
 
 menu {
   display: flex;
+  align-items: center;
   justify-content: space-around;
   width: 100%;
   max-width: var(--col-w);
+  padding: 0;
 }
 menu > a {
   --l-color: var(--clr-logo-1);
