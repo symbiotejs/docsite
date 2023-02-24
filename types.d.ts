@@ -1,5 +1,5 @@
 declare module 'https://*';
 
-declare module 'https://symbiotejs.github.io/symbiote.js/core/BaseComponent.js' {
+declare module 'https://esm.sh/@symbiotejs/symbiote' {
   export * from '@symbiotejs/symbiote';
 }
