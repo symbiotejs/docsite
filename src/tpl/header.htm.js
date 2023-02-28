@@ -8,8 +8,10 @@ for (let section in NAV) {
 }
 
 export default /*html*/ `
-<div logo>
-  ${logo(60)}
-</div>
+<a href="./">
+  <div logo>
+    ${logo(60)}
+  </div>
+</a>
 <menu>${menuHtml}</menu>
 `;
