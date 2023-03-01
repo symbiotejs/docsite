@@ -1,8 +1,8 @@
 export const NAV = {
-  home: {
-    menuItem: 'Home',
-    link: './',
-  },
+  // home: {
+  //   menuItem: 'Home',
+  //   link: './',
+  // },
   docs: {
     menuItem: 'Docs',
     link: 'docs/Installation.html',
