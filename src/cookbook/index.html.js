@@ -8,11 +8,20 @@ let pageContent = /*html*/ `
 <h2>Basics</h2>
 <ul>
   <li><a href="./cookbook/basic/">Basic example</a></li>
-  <li><a href="./cookbook/data-context/">Data context</a></li>
   <li><a href="./cookbook/slots/">Slots</a></li>
   <li><a href="./cookbook/tag-names/">Tag names</a></li>
+</ul>
+
+<h2>Templates</h2>
+<ul>
   <li><a href="./cookbook/template/">Manual template rendering</a></li>
   <li><a href="./cookbook/template-processor/">Template processor</a></li>
+</ul>
+
+<h2>Data contexts</h2>
+<ul>
+  <li><a href="./cookbook/data-context/">Data context</a></li>
+  <li><a href="./cookbook/context-types/">Context types</a></li>
 </ul>
 
 <h2>Lists</h2>

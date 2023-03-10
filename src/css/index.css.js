@@ -48,6 +48,19 @@ html, body {
 a {
   color: currentColor;
 }
+a[button] {
+  display: inline-flex;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  height: var(--ui-h);
+  border-radius: var(--r1);
+  padding-left: 1em;
+  padding-right: 1em;
+  text-decoration: none;
+}
+
+
 p {
   margin: 0;
 }
@@ -80,6 +93,10 @@ img {
   :root {
     --gap-max: 20px;
   }
+}
+
+live-code {
+  opacity: 0;
 }
 
 ${code}
