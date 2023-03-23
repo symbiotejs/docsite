@@ -57,7 +57,7 @@ export class LiveCode extends BaseComponent {
       this.$.resultUrl = URL.createObjectURL(new Blob([htmlDoc], {
         type: 'text/html',
       }));
-
+      this.setAttribute('resolved', '');
       this._resultTimeout = null;
     }, 300);
   }
@@ -126,6 +126,13 @@ LiveCode.bindAttributes({
   css: 'css',
 });
 
+LiveCode.rootStyles = /*css*/ `
+live-code[resolved] {
+  transition: opacity .4s;
+  opacity: 1;
+}
+`;
+
 LiveCode.shadowStyles = /*css*/ `
 iframe {
   display: block;
@@ -140,24 +147,31 @@ button {
   padding-left: .5em;
   padding-right: .5em;
 }
+[code] {
+  margin-bottom: 20px;
+}
 `;
 
 LiveCode.template = /*html*/ `
-<slot name="html-description"></slot>
+<slot name="html-description-1"></slot>
 <h2>HTML</h2>
-<div ref="html"></div>
+<div code ref="html"></div>
+<slot name="html-description-2"></slot>
 
-<slot name="js-description"></slot>
+<slot name="js-description-1"></slot>
 <h2>JS</h2>
-<div ref="js"></div>
+<div code ref="js"></div>
+<slot name="js-description-2"></slot>
 
-<slot name="css-description"></slot>
+<slot name="css-description-1"></slot>
 <h2>CSS</h2>
-<div ref="css"></div>
+<div code ref="css"></div>
+<slot name="css-description-2"></slot>
 
-<slot name="result-description"></slot>
+<slot name="result-description-1"></slot>
 <h2>Result:</h2>
 <iframe set="@src: resultUrl"></iframe>
+<slot name="result-description-2"></slot>
 
 <button set="onclick: openSeparate">Open result in the tab ↗</button>
 `;

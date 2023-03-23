@@ -20,7 +20,7 @@ export const NAV = {
     link: 'community/',
   },
   github: {
-    menuItem: 'GitHub ↗',
+    menuItem: 'GitHub &rarr;',
     link: 'https://github.com/symbiotejs/symbiote.js',
   },
 };
