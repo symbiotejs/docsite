@@ -11,9 +11,11 @@ header {
   transform: translate(-50%);
   width: 100%;
   backdrop-filter: blur(6px);
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, .8);
   z-index: 100000;
   box-shadow: 0 1px 6px rgba(0, 0, 0, .1);
+  max-height: 60px;
+  overflow: hidden;
 }
 
 header, footer {
@@ -30,22 +32,12 @@ footer {
 
 [logo] {
   position: relative;
-  background-color: #000;
-  height: 60px;
-}
-[logo]::before, [logo]::after {
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 12px;
-  top: 0;
-  background-color: rgba(160, 160, 160, .4);
-}
-[logo]::before {
-  left: -6px;
-}
-[logo]::after {
-  right: -6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
 }
 
 main {
@@ -73,6 +65,7 @@ menu > a {
   position: relative;
   display: block;
   text-decoration: none;
+  text-shadow: 0 0 12px #fff;
 }
 menu > a::after {
   content: '';
@@ -103,6 +96,7 @@ article {
   margin-bottom: var(--gap-max);
   box-shadow: 0 0 10px rgba(0, 0, 0, .1);
   overflow: auto;
+  border-radius: var(--r2);
 }
 article a {
   overflow-wrap: break-word;

@@ -1,4 +1,4 @@
-export default function(size) {
+export default function (size) {
   return /*svg*/ `
   <svg
      width="${size}"
@@ -12,14 +12,7 @@ export default function(size) {
        id="defs2" /><g
        id="layer2"><g
          id="g12818"
-         transform="matrix(1.5904537,0,0,1.5904537,-289.18878,-274.38736)"><rect
-           style="fill:#000;fill-opacity:1;stroke:none;stroke-width:10;stroke-linecap:round;stroke-linejoin:round"
-           id="rect11886"
-           width="628.7514"
-           height="628.7514"
-           x="181.82785"
-           y="172.52144"
-           ry="75.853584" /><g
+         transform="matrix(1.5904537,0,0,1.5904537,-289.18878,-274.38736)"><g
            id="g12031"><path
              id="path10927"
              style="fill:#c7dd44;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"

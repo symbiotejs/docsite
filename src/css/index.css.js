@@ -27,6 +27,7 @@ export default /*css*/ `
   --gap-max: 40px;
 
   --r1: 6px;
+  --r2: 24px;
 
   --ui-h: 40px;
 
