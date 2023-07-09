@@ -23,17 +23,20 @@ export default /*css*/ `
   --gap-min: 2px;
   --gap-mid: 10px;
   --gap-mid2: 6px;
-  --gap-max: 20px;
+  --gap-max2: 20px;
   --gap-max: 40px;
 
   --r1: 6px;
-  --r2: 24px;
+  --r2: 32px;
 
   --ui-h: 40px;
 
   --col-w: 980px;
 
   --blur: 6px;
+
+  --adaptive-margin-top: 0;
+  --adaptive-justify-content: flex-start;
 }
 html, body {
   min-height: 100vh;
@@ -93,6 +96,7 @@ img {
 @media screen and (max-width: 800px) {
   :root {
     --gap-max: 20px;
+    --adaptive-margin-top: 20px;
   }
 }
 

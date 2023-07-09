@@ -92,11 +92,13 @@ article {
   display: block;
   padding: var(--gap-max);
   background-color: #fff;
-  margin-top: var(--gap-max);
+  margin-top: var(--gap-max2);
   margin-bottom: var(--gap-max);
   box-shadow: 0 0 10px rgba(0, 0, 0, .1);
   overflow: auto;
   border-radius: var(--r2);
+  border-top-right-radius: var(--r1);
+  border-bottom-left-radius: var(--r1);
 }
 article a {
   overflow-wrap: break-word;
@@ -116,41 +118,31 @@ p {
 promo-el {
   display: flex;
   flex-wrap: wrap;
-  padding-top: var(--gap-max);
+  padding: var(--gap-max);
+  border-radius: var(--r2);
+  border-top-right-radius: var(--r1);
+  border-bottom-left-radius: var(--r1);
+  color: var(--clr-1);
+  margin-top: var(--gap-max2);
+  box-shadow: 0 0 12px rgba(0, 0, 0, .4);
 }
 [promo] {
   display: flex;
   flex-flow: column;
-  font-size: 70px;
+  font-size: 60px;
   font-family: 'Bebas Neue';
-  line-height: 70px;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
+  line-height: 60px;
   padding-right: var(--gap-max);
-  transform: translateY(6px);
 }
 [example] {
   flex-grow: 1;
   min-width: 380px;
-  min-height: 340px;
+  margin-top: var(--adaptive-margin-top);
 }
 [shade] {
   position: relative;
   background-color: #ccc;
   color: rgba(255, 255, 255, .6);
-  border-top-left-radius: 100px;
-  border-bottom-right-radius: 100px;
-}
-[shade]:before, [shade]:after {
-  position: absolute;
-  content: '';
-  display: block;
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  pointer-events: none;
-  border: 30px solid rgba(255, 255, 255, .2);
   border-top-left-radius: 100px;
   border-bottom-right-radius: 100px;
 }

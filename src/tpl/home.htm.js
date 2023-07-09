@@ -19,15 +19,15 @@ ${head('./')}
   <header>${header}</header>
   <main>
     <column-el>
-      <promo-el>
-        <div promo use-bg>
+      <promo-el use-bg>
+        <div promo>
           <div>Light</div>
           <div>Fast</div>
           <div>Modern</div>
           <div>Flexible</div>
           <div>Powerful</div>
         </div>
-        <div example center shade use-bg>
+        <div example center>
           <div>Symbiote.js application example</div>
           <div>File uploader widget</div>
           <div>↓</div>
