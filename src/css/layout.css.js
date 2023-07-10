@@ -11,6 +11,7 @@ header {
   transform: translate(-50%);
   width: 100%;
   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   background-color: rgba(255, 255, 255, .8);
   z-index: 100000;
   box-shadow: 0 1px 6px rgba(0, 0, 0, .1);
