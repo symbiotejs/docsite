@@ -1,5 +1,5 @@
 import { NAV } from '../data/nav.js';
-import logo from '../svg/logo/index.svg.js';
+import logo from '../../svg/logo/index.svg.js';
 
 let menuHtml = '';
 for (let section in NAV) {

@@ -2,9 +2,9 @@ import head from './head.htm.js';
 import header from './header.htm.js';
 import footer from './footer.htm.js';
 import fs from 'fs';
-import { md2html } from '../../lib/processMarkdown.js';
+import { md2html } from '../../../lib/processMarkdown.js';
 
-let comMd = fs.readFileSync('./src/md/Community.md').toString();
+let comMd = fs.readFileSync('./src/1x/md/Community.md').toString();
 let comHtml = await md2html(comMd);
 
 export default /*html*/ `

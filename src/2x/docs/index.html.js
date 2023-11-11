@@ -1,7 +1,7 @@
-import { processMarkdown } from '../../lib/processMarkdown.js';
+import { processMarkdown } from '../../../lib/processMarkdown.js';
 import docTpl from '../tpl/doc.htm.js';
 
-processMarkdown('./src/docs/', docTpl);
+processMarkdown('./src/2x/docs/', docTpl);
 
 export const FLAGS = {
   processMarkdown: true,

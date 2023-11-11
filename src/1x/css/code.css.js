@@ -1,20 +1,20 @@
 export default /*css*/ `
 code {
   display: inline-block;
-  background-color: var(--clr-a4);
-  color: var(--clr-2);
-  padding: var(--gap-mid2);
-  border-radius: var(--r1);
+  background-color: var(--clr-a4, #000);
+  color: var(--clr-2, #fe0);
+  padding: var(--gap-mid2, 10px);
+  border-radius: var(--r1, 3px);
   border-bottom: 2px solid var(--clr-a3);
   border-right: 2px solid var(--clr-a3);
 }
 
 code[class] {
   display: block;
-  padding: var(--gap-max);
-  background-color: var(--clr-2);
+  padding: var(--gap-max, 20px);
+  background-color: var(--clr-2, #000);
   color: #fff;
-  border-radius: var(--r1);
+  border-radius: var(--r1, 3px);
   overflow: auto;
 }
 

@@ -1,4 +1,4 @@
-import logo from '../svg/logo/index.svg.js';
+import logo from '../../svg/logo/index.svg.js';
 
 let b64Logo = btoa(logo(72));
 

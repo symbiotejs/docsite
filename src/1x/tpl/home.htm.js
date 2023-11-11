@@ -1,8 +1,8 @@
 import head from './head.htm.js';
 import header from './header.htm.js';
 import footer from './footer.htm.js';
-import { md2html } from '../../lib/processMarkdown.js';
-import CFG from '../../project.cfg.js';
+import { md2html } from '../../../lib/processMarkdown.js';
+import CFG from '../../../project.cfg.js';
 
 let homeMd = await (await fetch('https://raw.githubusercontent.com/symbiotejs/symbiote.js/main/README.md')).text();
 let homeHtml = await md2html(homeMd);
