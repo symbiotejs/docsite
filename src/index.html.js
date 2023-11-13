@@ -29,7 +29,7 @@ ${head()}
   </a>
   
   <a href="#live">
-    <card-el double>Live example</card-el>
+    <card-el double clr-2>Live example</card-el>
   </a>
   
   <a href="./2x/cookbook/">

@@ -1,4 +1,4 @@
-let uploaderCssSrc = '//cdn.jsdelivr.net/npm/@uploadcare/blocks@0.25.0/web/lr-file-uploader-regular.min.css';
+let uploaderCssSrc = './2x/css/uploader/index.css';
 
 let spinnerHtml = /*html*/ `<ims-photo-spinner></ims-photo-spinner>`;
 
@@ -29,28 +29,29 @@ let uploaderHtml = /*html*/ `
 export default /*md*/ `
 ## Live example
 
-This example contains two Symbiote applications. 
+This example contains two embedded Symbiote applications. 
 
-The first one, is the interactive animation sequence player (~7k):
+### 1. Photo-360 player (~7k)
 
 ${spinnerHtml}
 
-This is how this player is inserted to the page (HTML-tag):
+HTML code example:
 \`\`\`html
 <ims-photo-spinner data="DATA_JSON_URL"></ims-photo-spinner>
 \`\`\`
 
-The next application is the file uploader widget with the image editor built in (~55kb):
+### 2. File uploader with the image editor built in (~55kb)
 ${uploaderHtml}
 
-Uploader HTML-code:
+HTML code example:
 \`\`\`html
 <lr-file-uploader-regular 
   css-src="${uploaderCssSrc}">
 </lr-file-uploader-regular>
 \`\`\`
+
 These widgets are provided by different vendors, but they connected to the one common workflow. 
-Symbiote.js allows to do it with ease. 
+Symbiote.js allows you to do it with ease and the high level of flexibility.
 
 You can try to upload your own animation sequence (frame images) to the [Uploadcare](https://uploadcare.com/) CDN and see the result.
 

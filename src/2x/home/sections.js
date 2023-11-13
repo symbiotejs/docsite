@@ -1,6 +1,6 @@
 import { md2html } from '../../../lib/processMarkdown.js';
 
-let closeBtn = /*html*/ `<a href="#home" line>Close [x]</a>`;
+let closeBtn = /*html*/ `<div close-panel><a href="#home" close>Close [x]</a></div>`;
 
 /**
  * 
@@ -24,7 +24,7 @@ export default /*html*/ `
 
 <section id="live">
   ${closeBtn}
-  <section-inner clr-6>${await md('../md/live.md.js')}</section-inner>
+  <section-inner clr-2>${await md('../md/live.md.js')}</section-inner>
 </section>
 
 <section id="biome">

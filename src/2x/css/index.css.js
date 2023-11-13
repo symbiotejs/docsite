@@ -44,10 +44,20 @@ a {
   color: currentColor;
   text-decoration: none;
 }
-a[line] {
-  display: block;
-  padding-top: 10px;
-  padding-bottom: 10px;
+
+h3 {
+  margin-top: 3em;
+}
+blockquote {
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, .1);
+  border-radius: 6px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 2px solid currentColor;
 }
 card-el {
   display: inline-flex;
@@ -101,14 +111,15 @@ card-el[max] {
 }
 section {
   position: fixed;
+  display: block;
   top: 0px;
   left: 0px;
   right: 0px;
   bottom: 0px;
   color: #fff;
   background-color: rgba(0, 0, 0, .4);
-  backdrop-filter: blur(10px);
-  padding: 30px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   overflow: auto;
   transition: .4s;
   opacity: 0;
@@ -120,11 +131,26 @@ section:target {
   pointer-events: all;
   transform: none;
 }
+section [close-panel] {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  color: #fff;
+  z-index: 100000;
+}
+section a[close] {
+  display: block;
+  padding: 20px;
+  padding-left: 50px;
+}
 
 section-inner {
   display: block;
   background-color: #c7dd44;
   color: #000;
+  margin: 30px;
   padding: 20px;
   transition: .3s;
   border-radius: 20px;
@@ -137,9 +163,7 @@ section-inner {
 
 ims-photo-spinner {
   width: 100%;
-  border-radius: 22px;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-radius: 6px;
   color: #fff;
 }
 
@@ -148,8 +172,8 @@ accent-block {
   justify-content: center;
   align-items: center;
   padding: 40px;
-  border-radius: 8px;
-  background-color: rgba(0, 0, 0, .2);
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .1);
 }
 
 ${codeCss}

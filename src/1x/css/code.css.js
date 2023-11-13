@@ -3,10 +3,13 @@ code {
   display: inline-block;
   background-color: var(--clr-a4, #000);
   color: var(--clr-2, #fe0);
-  padding: var(--gap-mid2, 10px);
-  border-radius: var(--r1, 3px);
-  border-bottom: 2px solid var(--clr-a3);
-  border-right: 2px solid var(--clr-a3);
+  border-radius: var(--r1, 6px);
+}
+
+code:not([class]) {
+  padding: var(.05em);
+  padding-left: .5em;
+  padding-right: .5em;
 }
 
 code[class] {
@@ -14,7 +17,6 @@ code[class] {
   padding: var(--gap-max, 20px);
   background-color: var(--clr-2, #000);
   color: #fff;
-  border-radius: var(--r1, 3px);
   overflow: auto;
 }
 
