@@ -1,6 +1,6 @@
 # Templates
 
-The core template mechanic in Symbiote.js - is a native browser HTML-string parsing via standard DOM API methods. That's the fastest way to create component template instance in object model representation. It might be quite counterintuitive, but in modern browsers `innerHTML` works faster, than imperative elements structure creation with `document.createElement`.
+The core template mechanic in Symbiote.js - is a native browser HTML-string parsing via standard DOM API methods. That's the fastest way to create component template instance in object model representation.
 
 ## html
 

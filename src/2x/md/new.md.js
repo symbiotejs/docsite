@@ -88,7 +88,7 @@ It helps to significantly simplify a lot of complicated interaction cases and to
 In Symbiote.js 2.x you can define computed properties which are calculated  
 on any other local property change:
 \`\`\`js
-class MyComponent extends BaseComponent {
+class MyComponent extends Symbiote {
 
   init$ = {
     a: 1,
@@ -106,7 +106,7 @@ Property calculation flow is optimized and won't be invoked while all other chan
 
 ### 6. Virtual components
 \`\`\`js
-class MyComponent extends BaseComponent {
+class MyComponent extends Symbiote {
 
   isVirtual = true;
 
@@ -138,7 +138,7 @@ class TableRow extends HTMLElement {
 window.customElements.define('table-row', TableRow);
 
 // Than render big dynamic table with Symbiote:
-class MyTable extends BaseComponent {
+class MyTable extends Symbiote {
 
   init$ = {
     tableData: [],
@@ -206,7 +206,10 @@ or to use code CDNs to use any module as build endpoint.
 That is much more flexible and modern approach.
 
 ### 11. Entity renames
+
 We've renamed some API entities according to developers feedback.
+
+> The major rename is that \`BaseComponent\` class is now \`Symbiote\`.
 
 Raw HTML template changes (if don't use "html" tag):
 \`\`\`html
@@ -237,9 +240,28 @@ Dynamic list:
 
 <ul itemize="data" item-tag="list-item"></ul>
 or 
-<ul \${{
-  itemize: 'data',
-  'item-tag': 'list-item',
-}}></ul>
+<ul \${{itemize: 'data', 'item-tag': 'list-item'}}></ul>
 \`\`\`
+
+### 12. Light DOM slots support is removed by default
+
+Light DOM slots support is removed from the default template processing pipeline. Now, if 
+you need to use slots without Shadow DOM, you need to connect \`slotProcessor\` manually:
+
+\`\`\`js
+import Symbiote from '@symbiotejs/symbiote';
+import { slotProcessor } from '@symbiotejs/symbiote/core/slotProcessor.js';
+
+class MyComponent extends Symbiote {
+  constructor() {
+    super();
+    this.addTemplateProcessor(slotProcessor);
+  }
+}
+\`\`\`
+
+The reason is that this function can trigger unexpected lifecycle callbacks in the nested 
+DOM structure and should be used with attention to that.
+
+For the most cases, when slots are necessary, use components with a Shadow DOM mode enabled.
 `;

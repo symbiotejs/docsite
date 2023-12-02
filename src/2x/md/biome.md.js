@@ -43,6 +43,7 @@ function myFunction(a, b, c) {
 Check the details at [https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
 
 ### 3. Building and minification
+
 [Esbuild](https://esbuild.github.io/) - is our choice for the code bundling and minification.
 Esbuild is very performant and easy to configure solution that can prepare your JavaScript and
 CSS code for the distribution.
@@ -54,10 +55,20 @@ build workflows to share the dependencies anymore.
 
 Example:
 \`\`\`js
-import BaseComponent, { html, css } from 'https://cdn.jsdelivr.net/npm/@symbiotejs/symbiote/core/index.js/+esm';
+import { Symbiote, html, css } from 'https://esm.run/@symbiotejs/symbiote';
 
-export class MyAppComponent extends BaseComponent {}
+export class MyAppComponent extends Symbiote {}
 
 export { html, css }
 \`\`\`
+
+### 4. Local/dev server
+
+Use any local server you like, that can serve static files. Symbiote.js is agnostic and it doesn't 
+require any special tool for ESM modules resolving or for the anything else. 
+
+You can use the simple relative paths for your modules or \`import-maps\` for the 
+[module path mapping](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap). 
+
+This feature is [supported in all modern browsers](https://caniuse.com/import-maps).
 `;

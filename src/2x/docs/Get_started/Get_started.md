@@ -17,7 +17,7 @@ npm install @symbiotejs/symbiote --save-dev
 
 To easily share Symbiote.js as a common dependency between independent application parts (widgets, micro-frontends, meta-applications), you can use one of the modern code CDNs:
 ```js
-import { BaseComponent } from 'https://esm.run/@symbiotejs/symbiote';
+import { Symbiote } from 'https://esm.run/@symbiotejs/symbiote';
 ```
 
 TypeScript support (my-types.d.ts):
@@ -44,9 +44,9 @@ Also, you can publish your own Symbiote.js build as a regular static file to you
 It's convenient to define the common base class for your application to have ability to manage HTTPS dependency in one place and to have an endpoint for any app-level extensions:
 
 ```js
-import { BaseComponent } from 'https://esm.run/@symbiotejs/symbiote';
+import { Symbiote } from 'https://esm.run/@symbiotejs/symbiote';
 
-export class AppComponent extends BaseComponent {
+export class AppComponent extends Symbiote {
   // Your code...
 }
 ```
@@ -89,68 +89,56 @@ npm run setup
 
 ## Your first Symbiote-component
 
-`my-app.js`:
+First, create the JavaScript file `my-app.js`:
 ```js
-import { BaseComponent, html, css } from 'https://esm.run/@symbiotejs/symbiote';
+import { Symbiote, html, css } from 'https://esm.run/@symbiotejs/symbiote';
 
-export class MyComponent extends BaseComponent {
+export class MyComponent extends Symbiote {
+
+  // Initiate state:
   init$ = {
     count: 0,
     increment: () => {
       this.$.count++;
     },
   }
+
 }
 
+// Define template:
 MyComponent.template = html`
   <h2>{{count}}</h2>
   <button ${{onclick: 'increment'}}>Click me!</button>
 `;
+
+// Describe styles:
+MyComponent.rootStyles = css`
+  my-component {
+    color: #f00;
+  }
+`;
+
+// Register the new HTML-tag in browser:
+MyComponent.reg('my-component');
 ```
 
-Create the `my-first-symbiote-try.html`:
+Second, create the HTML file `my-app.html`:
 ```html
-<script type="module">
+<script src="my-app.js" type="module"></script>
 
-  // Import base class and the html-template helper function:
-  import { BaseComponent, html, css } from 'https://symbiotejs.github.io/symbiote.js/core/BaseComponent.js';
-
-  class MyComponent extends BaseComponent {
-
-    // Initiate component's state:
-    init$ = {
-      count: 0,
-      increment: () => {
-        this.$.count++;
-      },
-    }
-
-  }
-
-  // Define reactive template:
-  MyComponent.template = html`
-    <h2>{{count}}</h2>
-    <button ${{onclick: 'increment'}}>Click me!</button>
-  `;
-
-  // Describe styles:
-  MyComponent.rootStyles = css`
-    my-component {
-      color: #f00;
-    }
-  `;
-
-  // Register your Web Component in the browser with a new tag:
-  MyComponent.reg('my-component');
-
-</script>
-
-Insert your tag somewhere in your document:
 <my-component></my-component>
 ```
 
-> To run this example, you'll need a browser and the text editor only. 
+That's it! Open this HTML file in your browser and check the result.
+
+> To run this example, you'll need a browser and the text editor only. No any build setup or local server required in this case.
 
 ## Platform specs & Standards
 
-It's important to know, what are the Web Components in general.
+It's important to know, what are the Web Components in general. Here we provide some links to the useful platform documentation (MDN):
+- [Custom Elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements)
+- [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM)
+- [Templates and slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots)
+- [Constructable Stylesheets](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/CSSStyleSheet)
+- [ECMAScript Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+- [Import maps](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap)
