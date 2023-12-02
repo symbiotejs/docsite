@@ -29,13 +29,12 @@ window.onload = () => {
   updateSpinner();
 
   uploaderOutputEl.addEventListener('lr-data-output', (e) => {
-    console.log(e.detail?.data?.files);
     if (e.detail?.data?.files?.length) {
       let nameMap = {};
       let sequence = [];
       e.detail?.data?.files.forEach((file) => {
         let name = file.name.split('.')[0];
-        nameMap[name] = file.cdnUrl + '-/preview/1820x1080/-/quality/smart_retina/-/format/auto/';
+        nameMap[name] = file.cdnUrl + '-/preview/1920x1080/-/quality/smart_retina/-/format/auto/';
       });
       Object.keys(nameMap).sort().forEach((key) => {
         sequence.push(nameMap[key]);
@@ -43,7 +42,6 @@ window.onload = () => {
       console.log(sequence);
       SPINNER_DATA.src = sequence;
       SPINNER_DATA.startFrame = 1;
-      console.log(SPINNER_DATA);
       updateSpinner();
     }
   });

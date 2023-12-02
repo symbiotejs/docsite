@@ -1,15 +1,19 @@
 export default /*css*/ `
 code {
-  display: inline-block;
-  background-color: var(--clr-a4, #000);
+  --clr-2: #262626;
   color: var(--clr-2, #fe0);
   border-radius: var(--r1, 6px);
 }
 
 code:not([class]) {
-  padding: var(.05em);
+  background-color: rgba(160, 160, 160, .3);
+  color: currentColor;
+  display: inline-block;
+  padding: .05em;
   padding-left: .5em;
   padding-right: .5em;
+  margin-left: .2em;
+  border-bottom: 1px solid rgba(0, 0, 0, .4);
 }
 
 code[class] {

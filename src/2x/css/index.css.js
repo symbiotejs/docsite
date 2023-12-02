@@ -19,10 +19,13 @@ function borders() {
 export default /*css*/ `
 :root {
   --clr-1: #000;
+  --clr-2: #fff;
 
   --gap-mid: 10px;
 
   --card-size: 260px;
+
+  --left-col: 160px;
 }
 html, body {
   padding: 0;
@@ -30,6 +33,7 @@ html, body {
   color: var(--clr-2);
   background-color: var(--clr-1);
   font-family: monospace;
+  overscroll-behavior: none;
 }
 * {
   box-sizing: border-box;
@@ -48,12 +52,17 @@ a {
 h3 {
   margin-top: 3em;
 }
+
+card-el h3 {
+  margin-top: 1em;
+}
+
 blockquote {
   margin: 0;
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 20px;
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, .2);
   border-radius: 6px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -136,7 +145,8 @@ section [close-panel] {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, .4);
+  backdrop-filter: blur(8px);
   color: #fff;
   z-index: 100000;
 }
@@ -174,6 +184,52 @@ accent-block {
   padding: 40px;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, .1);
+}
+
+layout-el {
+  display: block;
+  padding-left: var(--left-col);
+  background-color: #ccc;
+  color: #212121;
+  min-height: 100vh;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: calc(100vw - var(--left-col));
+  bottom: 0;
+  padding: 20px;
+  padding-right: 10px;
+  border-right: 1px solid rgba(0, 0, 0, .1);
+}
+
+nav > a {
+  --sub-clr: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1em;
+  white-space: nowrap;
+}
+nav > a:hover {
+  --sub-clr: #00aba9;
+}
+nav > a[sub]:after {
+  content: '>';
+  color: var(--sub-clr);
+  margin-left: .5em;
+  transition: .3s;
+}
+
+nav > a[current] {
+  pointer-events: none;
+  color: #00aba9;
+}
+
+article {
+  display: block;
+  padding: 20px;
+  max-width: 960px;
 }
 
 ${codeCss}

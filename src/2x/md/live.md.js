@@ -45,9 +45,7 @@ ${uploaderHtml}
 
 HTML code example:
 \`\`\`html
-<lr-file-uploader-regular 
-  css-src="${uploaderCssSrc}">
-</lr-file-uploader-regular>
+<lr-file-uploader-regular css-src="${uploaderCssSrc}"></lr-file-uploader-regular>
 \`\`\`
 
 These widgets are provided by different vendors, but they connected to the one common workflow. 

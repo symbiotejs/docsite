@@ -1,5 +1,4 @@
 import head from './2x/tpl/head.htm.js';
-
 import sections from './2x/home/sections.js';
 
 export default /*html*/ `
@@ -20,7 +19,7 @@ ${head()}
     </card-el>
   </a>
 
-  <a href="./2x/docs/installation.html">
+  <a href="./2x/docs/Get_started/">
     <card-el clr-2>Docs</card-el>
   </a>
 
@@ -38,6 +37,10 @@ ${head()}
 
   <a href="#biome">
     <card-el>Biome</card-el>
+  </a>
+
+  <a href="https://chat.openai.com/g/g-7GbkxAPqG-symbiote-ai"  target="_blank">
+    <card-el double clr-5>Symbiote AI  →</card-el>
   </a>
 
   <a href="#community">
