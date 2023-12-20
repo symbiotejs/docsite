@@ -104,7 +104,28 @@ Property calculation flow is optimized and won't be invoked while all other chan
 
 > Summary: use the \`+\` property prefix to define computed properties.
 
-### 6. Virtual components
+### 6. CSS Data initiation token \`--\`
+
+Now you can use special property tokens to initiate component data with a values  
+defined as CSS Custom Property:
+\`\`\`js
+class TestApp extends Symbiote {}
+
+TestApp.rootStyles = css\`
+  test-app {
+    --header: 'CSS Data';
+    --text: 'Hello!';
+  }
+\`;
+
+TestApp.template = html\`
+  <h1>{{--header}}</h1>
+  <div>{{--text}}</div>
+\`;
+\`\`\`
+This feature helps to create and provide configurations for the components.
+
+### 7. Virtual components
 \`\`\`js
 class MyComponent extends Symbiote {
 
@@ -116,7 +137,7 @@ When **isVirtual** flag is enabled, your component will be rendered as a part of
 without any wrapping Custom Element in structure. In this case, component's custom tag will be 
 used as a placeholder only, and will be removed at rendering stage. 
 
-### 7. Enhanced list rendering
+### 8. Enhanced list rendering
 Built-in list rendering is now support any kind of reactive web-components, not the Symbiote-components
 only. That helps to achieve maximum performance in that cases, when it is very important, for 
 example, in big dynamic tables. Here is an example:
@@ -173,14 +194,14 @@ MyTable.rootStyles = css\`
 
 MyTable.template = html\`
   <h1>Hello table!</h1>
-  <table \${{list: 'tableData', 'list-item-tag': 'table-row'}}></table>
+  <table \${{itemize: 'tableData', 'item-tag': 'table-row'}}></table>
 \`;
 
 MyTable.reg('my-table');
 \`\`\`
 In this example we made a performant dynamic table of 20000 reactive cells.
 
-### 8. Alternative binding syntax is removed
+### 9. Alternative binding syntax is removed
 We've removed the alternative binding description support because it required an excess 
 property name transformations, which are not obvious for the developers sometimes. 
 
@@ -193,19 +214,19 @@ Use the new tag function helper instead:
 <button \${{onclick: 'onButtonClicked'}}></button>
 \`\`\`
 
-### 9. Runtime type warnings for the state properties
+### 10. Runtime type warnings for the state properties
 Browser runtime is the most reliable source of information about what happens in your code.
 So, in addition to static code analysis, we use runtime type checks to prevent issues in some 
 complicated cases. Now, if you accidentally change the type of your state property or initiate
 your property with a wrong type, you will be warn about that.
 
-### 10. Build and type definitions
+### 11. Build and type definitions
 Bundled code and single type definitions endpoint are not provided as a part of package anymore.
 We build our library that way, what allows to simplify build process in your development environment
 or to use code CDNs to use any module as build endpoint. 
 That is much more flexible and modern approach.
 
-### 11. Entity renames
+### 12. Entity renames
 
 We've renamed some API entities according to developers feedback.
 
@@ -243,7 +264,7 @@ or
 <ul \${{itemize: 'data', 'item-tag': 'list-item'}}></ul>
 \`\`\`
 
-### 12. Light DOM slots support is removed by default
+### 13. Light DOM slots support is removed by default
 
 Light DOM slots support is removed from the default template processing pipeline. Now, if 
 you need to use slots without Shadow DOM, you need to connect \`slotProcessor\` manually:

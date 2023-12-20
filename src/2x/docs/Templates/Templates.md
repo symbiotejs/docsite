@@ -2,7 +2,7 @@
 
 The core template mechanic in Symbiote.js - is a native browser HTML-string parsing via standard DOM API methods. That's the fastest way to create component template instance in object model representation.
 
-## html
+### html
 
 We have a `html` helper tag function, that manage to construct templates using compact binding-maps:
 ```js
@@ -19,11 +19,13 @@ that describes connections between the own inner element properties and the comp
 
 > Note, that in Symbiote.js you can define and describe template outside the component's context (`this`) visibility, this is a clear abstraction. That helps to make manipulations with templates much more flexible than in some other libraries.
 
+### Binding to a text node
+
 Let's see onto the more detailed example:
 ```js
-import { BaseComponent, html } from '@symbiotejs/symbiote';
+import Symbiote, { html } from '@symbiotejs/symbiote';
 
-class MyComponent extends BaseComponent {
+class MyComponent extends Symbiote {
 
   init$ = {
     name: 'John',
@@ -42,95 +44,80 @@ MyComponent.template = html`
 ```
 In this example we have a new type of template bindings to a text nodes, which are defined with a double braces syntax - `{{myProp}}`.
 
-## Binding to a nested property
+### Binding to nested properties
 
+Symbiote.js allows to bind properties to the nested properties of the elements:
 ```js
-
+MyComponent.template = html`
+  <div ${{'style.color': 'myCssValue'}}>Some text...</div>
+`;
 ```
 
-Attribute value syntax based on key/value pairs:
-```html
-<div 
-  bind="textContent: myText; style.color: textColor">
-</div>
-```
-* Keys and values should be separated with `:`
-* All key/value pairs should be separated by `;`
-* Spaces are optional, you can use them for better readability.
-* As you can see, nested properties are supported: `style.color`.
-* All keys are native object property names. So, they provide direct access to the DOM API.
-
-### Attributes
-
-To bind some property to the own element's HTML-attribute use `@` prefix:
-```html
-<div 
-  bind="@class: className">
-</div>
+Also, you can bind your props to the nested component's state directly, using `$`-proxy:
+```js
+MyComponent.template = html`
+  <my-component ${{'$.nestedPropName': 'propName'}}></my-component>
+`;
 ```
 
-### Contexts
-To bind element to some external data context property, use `*` prefix for property name:
-```html
-<div 
-  bind="textContent: *textFromContext">
-</div>
-```
+### Binding to HTML-attributes
 
-Also, to bind element to named (abstract) context, use context name as property prefix separated by slash symbol:
-```html
-<div 
-  bind="textContent: profile/name">
-</div>
-```
-
-**More information about data context you can find in "Data context" section.**
-
-### Handlers
-
-Action handler binding is the same as own property:
-```html
-<input type="text" bind="oninput: onTextInput" />
-```
-
-### Text nodes
-
-Binding to the text nodes is also supported with the same property scheme:
-```html
-Local component's data:
-<div>Hello {{userName}}! Welcome to the {{currentPlace}}!</div>
-
-or common context data:
-<div>Hello {{*userName}}!</div>
-
-or data from some named context:
-<div>Hello {{profile/name}}!</div>
+To bind some property to the element's attribute, use `@` prefix:
+```js
+MyComponent.template = html`
+  <div ${{'@hidden': 'isHidden'}}></div>
+`;
 ```
 
 ### Type casting
 
-Inversion:
-```html
-Local property:
-<div bind="@hidden: !innerText">{{innerText}}</div>
+You can transform any type of property value to `boolean` type (`true` or `false`), using `!` symbol.
 
-Common context property:
-<div bind="@hidden: !*innerText">{{*innerText}}</div>
-
-Named context property:
-<div bind="@hidden: !app/innerText">{{app/innerText}}</div>
+Inversion example:
+```js
+html`<div ${{'@hidden': '!innerText'}}> ... </div>`;
 ```
 
-Cast to boolean:
-```html
-<div bind="@contenteditable: !!innerText">{{innerText}}</div>
+Double inversion example:
+```js
+html`<div ${{'@contenteditable': '!!innerText'}}> ... </div>`;
 ```
+
+## Property Tokens (Property key prefixes)
+
+###  Named context property `/`
+
+To bind something to some named data context property, use the named prefix:
+```js
+html`<div ${{textContent: 'MY_APP/propName'}}> ... </div>`;
+```
+
+###  Shared context property `*`
+
+To share a property with other components in a same usage context, use the shared context token:
+```js
+html`<div ${{textContent: '*propName'}}> ... </div>`;
+```
+
+###  Inherited context property `^`
+
+To get the direct access to some property of the top level component (cascade data model), use the inheritance token:
+```js
+html`<div ${{textContent: '^propName'}}> ... </div>`;
+```
+
+###  CSS Data property `--`
+
+To initiate some property from the CSS Data, you can do as follows:
+```js
+html`<div ${{textContent: '--prop-name'}}> ... </div>`;
+```
+
+> More details about Symbiote-component's context you can find in [**Context**](./2x/docs/Context/) section.
 
 ## Slots
 
 [Slots](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) allow you to define placeholders in your template that can be filled with any external markup fragment.
-
-> Symbiote.js make slots available without Shadow DOM usage.
 
 Default template slot:
 ```html
@@ -155,48 +142,61 @@ Named template slots:
 ## Element references
 
 If you need an element reference somewhere in your code logics, use `ref` attribute for your template element:
-```html
-<div class="layout">
-  <div ref="div1"></div>
-  <div ref="div2"></div>
-</div>
+```js
+html`
+  <div>
+    <div ${{ref: 'div1'}}></div>
+    <div ${{ref: 'div2'}}></div>
+  </div>
+`;
 ```
+or, to get the same effect:
+```js
+html`
+  <div>
+    <div ref="div1"></div>
+    <div ref="div2"></div>
+  </div>
+`;
+```
+
 Reference name should be unique for each element (like an element's `id`).
-Then you can use `ref` collection to get those elements in your code without any additional search:
-```javascript
-class MyComponent extends BaseComponent {
-  initCallback() {
+Then you can use `ref` collection to get those elements in your code without any additional DOM search:
+```js
+class MyComponent extends Symbiote {
+  renderCallback() {
     this.ref.div1.contenteditable = true;
     this.ref.div2.style.color = 'red';
   }
 }
 ```
 
-## Data based templates
+## Dynamic list rendering
 
-Efficient conditional and data based template rendering is very case specific. In some cases the best solution is to use simple `innerHTML` approach. HTML parsing is very fast in modern browsers and frequently that's the most performant and convenient way:
-```javascript
-class MyComponent extends BaseComponent {
+To render efficient dynamic reactive list of elements, use the `itemize` API:
+
+```js
+class MyComponent extends Symbiote {
   init$ = {
-    listHtml: '',
-  }
-
-  initCallback() {
-    this.sub('*list', (/** @type {{uid:string}[]} */ list) => {
-      this.$.listHtml = list.reduce((html, item) => {
-        return html += html`<list-item uid="${item.uid}"></list-item>`;
-      }, '');
-    });
+    listData: [
+      {
+        firstName: 'John',
+        secondName: 'Snow',
+      },
+      {
+        firstName: 'Jane',
+        secondName: 'Stone',
+      },
+    ],
   }
 }
 
 MyComponent.template = html`
-<h2>Items:<h2>
-<div class="list-wrapper" bind="innerHTML: listHtml"></div>
+  <h1>My list:</h1>
+  <ul ${{itemize: 'listData'}}>
+    <li>{{firstName}} {{secondName}}<li>
+  </ul>
 `;
 ```
 
-## Dynamic lists
-
-Symbiote.js is supporting dynamic lists rendering and the performant data reconciliation with an unkeyed approach.
-Take a look at the "List rendering" section for more information.
+> More information about `itemize` API you can find at the [**List items** section](./2x/docs/List_items/).

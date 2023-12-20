@@ -48,13 +48,47 @@ a {
   color: currentColor;
   text-decoration: none;
 }
-
-h3 {
+article a {
+  text-decoration: underline;
+}
+ 
+article h3, h2 {
   margin-top: 3em;
+}
+
+article h2 {
+  color: #5e5e5e;
+}
+article h3 {
+  color: #2c579c;
 }
 
 card-el h3 {
   margin-top: 1em;
+  margin-bottom: 0;
+}
+card-el h2 {
+  margin-top: 0;
+}
+
+ul {
+  position: relative;
+  list-style-type: none;
+  padding: var(--gap-mid);
+  padding-left: 0;
+  left: 20px;
+}
+ul > li {
+  display: block;
+  margin: 0;
+  margin-bottom: 6px;
+}
+ul > li::before {
+  position: absolute;
+  left: -20px;
+  content: "-";
+  color: #c00098;
+  margin-right: var(--gap-mid);
 }
 
 blockquote {
@@ -83,7 +117,7 @@ card-el {
   margin-left: 5px;
   font-size: 18px;
   transition: .3s;
-  border-radius: 20px;
+  border-radius: 60px;
 }
 ${borders()}
 card-el:hover {
