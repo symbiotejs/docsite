@@ -3,11 +3,12 @@ import logo from '../../svg/logo/index.svg.js';
 let items = [
   'Get started',
   'Templates',
-  'List items',
   'Properties',
-  'Attributes',
   'Context',
+  'List items',
   'Lifecycle',
+  'Attributes',
+  'PubSub',
   'Styling',
   'Routing',
   'Types',
@@ -16,15 +17,15 @@ let items = [
 
 /**
  * 
- * @param {Number} currentIdx 
+ * @param {String} menuItem 
  * @returns 
  */
-export default function menu(currentIdx) {
+export default function menu(menuItem) {
   return /*html*/ `
 <nav>
   <a href="./"><div logo>${logo(90)}</div></a>
-  ${items.map((fName, idx) => {
-    return /*html*/ `<a ${idx === currentIdx ? 'current ': ''}sub href="./2x/docs/${fName.replaceAll(' ', '_')}/">${fName}</a>`;
+  ${items.map((fName) => {
+    return /*html*/ `<a ${fName === menuItem ? 'current ': ''}sub href="./2x/docs/${fName.replaceAll(' ', '_')}/">${fName}</a>`;
   }).join('')}
 </nav>
   `;

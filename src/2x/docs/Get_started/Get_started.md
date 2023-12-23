@@ -89,49 +89,54 @@ npm run setup
 
 ## Your first Symbiote-component
 
-First, create the JavaScript file `my-app.js`:
-```js
-import { Symbiote, html, css } from 'https://esm.run/@symbiotejs/symbiote';
-
-export class MyComponent extends Symbiote {
-
-  // Initiate state:
-  init$ = {
-    count: 0,
-    increment: () => {
-      this.$.count++;
-    },
-  }
-
-}
-
-// Define template:
-MyComponent.template = html`
-  <h2>{{count}}</h2>
-  <button ${{onclick: 'increment'}}>Click me!</button>
-`;
-
-// Describe styles:
-MyComponent.rootStyles = css`
-  my-component {
-    color: #f00;
-  }
-`;
-
-// Register the new HTML-tag in browser:
-MyComponent.reg('my-component');
-```
-
-Second, create the HTML file `my-app.html`:
+Create the HTML file `my-app.html`:
 ```html
-<script src="my-app.js" type="module"></script>
+<script type="importmap">
+  {
+    "imports": {
+      "symbiote": "https://esm.run/@symbiotejs/symbiote"
+    }
+  }
+</script>
+
+<script type="module">
+  import Symbiote, { html, css } from 'symbiote';
+
+  export class MyComponent extends Symbiote {
+
+    // Initiate state:
+    init$ = {
+      count: 0,
+      increment: () => {
+        this.$.count++;
+      },
+    }
+
+  }
+
+  // Define template:
+  MyComponent.template = html`
+    <h2>{{count}}</h2>
+    <button ${{onclick: 'increment'}}>Click me!</button>
+  `;
+
+  // Describe styles:
+  MyComponent.rootStyles = css`
+    my-component {
+      color: #f00;
+    }
+  `;
+
+  // Register the new HTML-tag in browser:
+  MyComponent.reg('my-component');
+</script>
 
 <my-component></my-component>
 ```
 
 That's it! Open this HTML file in your browser and check the result.
 
-> To run this example, you'll need a browser and the text editor only. No any build setup or local server required in this case.
+> To run this example, you'll need a browser and the text editor only. No any installation, build setup or local server is required in this case.
 
 ## Platform specs & Standards
 
@@ -140,5 +145,6 @@ It's important to know, what are the Web Components in general. Here we provide 
 - [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM)
 - [Templates and slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots)
 - [Constructable Stylesheets](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/CSSStyleSheet)
+- [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 - [ECMAScript Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 - [Import maps](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap)

@@ -200,3 +200,34 @@ MyComponent.template = html`
 ```
 
 > More information about `itemize` API you can find at the [**List items** section](./2x/docs/List_items/).
+
+## External customizable templates
+
+Symbiote.js allows you to create components, that can connect templates defined in common HTML-document. 
+
+To use this feature, set the `allowCustomTemplate` flag:
+```js
+class MyComponent extends Symbiote {
+
+  allowCustomTemplate = true;
+
+}
+```
+
+Then, define necessary templates in the HTML markup:
+```html
+<template id="first">
+  <h1>{{headingText}}</h1>
+</template>
+
+<template id="second">
+  <h2>{{headingText}}!</h2>
+</template>
+```
+
+Ok, now we can use them:
+```html
+<my-component use-template="#first"><my-component>
+
+<my-component use-template="#second"><my-component>
+```

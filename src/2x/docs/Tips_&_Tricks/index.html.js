@@ -4,4 +4,4 @@ import fs from 'fs';
 
 let md = fs.readFileSync('./src/2x/docs/Tips_&_Tricks/Tips.md').toString();
 
-export default await docPage(md, 10, {})
+export default await docPage(md, 'Tips & Tricks')

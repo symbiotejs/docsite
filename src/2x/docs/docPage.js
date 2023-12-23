@@ -5,18 +5,17 @@ import menu from './menu.js';
 /**
  * 
  * @param {String} mdTxt
- * @param {Number} menuIdx
- * @param {Object<string, string>} meta 
+ * @param {String} menuItem
  * @returns 
  */
-export async function docPage(mdTxt, menuIdx, meta) {
+export async function docPage(mdTxt, menuItem) {
   return /*html*/ `
     <!DOCTYPE html>
     <html lang="en">
     ${head('../../../')}
     <body style="display:block">
       <layout-el>
-        ${menu(menuIdx)}
+        ${menu(menuItem)}
         <article>${await md2html(mdTxt)}</article>
       </layout-el>
     </body>

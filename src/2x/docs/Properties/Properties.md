@@ -114,11 +114,11 @@ class MyComponent extends Symbiote {
 }
 
 MyComponent.template = html`<div>{{+sum}}</div>`;
-``` 
+```
 
-For this purpose, use the `+` property prefix for the property name. 
+For this purpose, use the `+` prefix for the property name. 
 
-> Note, that computed property will try to compute it's value on any component change. But it doesn't try to **render** changes in case of the final value has not been changed.
+> Note, that computed property will try to compute it's new value on any other property change. But it doesn't make any **excess render** in case of the final value has not been changed.
 
 Also, to trigger the change manually, use the `notify` method:
 ```js
@@ -138,8 +138,12 @@ class MyComponent extends Symbiote {
 
 ### Property context and tokens
 
-With Symbiote.js you don't need any external state management library. It's easy to connect, but you really just don't need it in most cases.
+Symbiote-component is able to interact with different types of properties, not with the own local properties only. The certain type of that interaction could be set by context tokens:
+- `^` - allows to get direct access to the upper level component property or handler
+- `*` - allows to share properties between components in the same workflow-context
+- `/` - allows to get access to some abstract named data context
+- `--` - allows to initiate property with the value recieved from CSS variable values
 
-All components created with Symbiote.js are present in some data context. Some of properties in that context are local and accessible for certain component only. Some of data could be received form the one of the parent components in document tree. Some of data could be received from the abstract data layers using unique keys. You can organize your application data flow with a high level of flexibility. Let's clarify what does it mean.
+> More details about context types and the related tokens you can find in the [Context](./2x/docs/Context/) section.
 
 

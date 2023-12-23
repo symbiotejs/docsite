@@ -4,4 +4,4 @@ import fs from 'fs';
 
 let md = fs.readFileSync('./src/2x/docs/Properties/Properties.md').toString();
 
-export default await docPage(md, 3, {})
+export default await docPage(md, 'Properties')
