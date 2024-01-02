@@ -266,5 +266,21 @@ article {
   max-width: 960px;
 }
 
+article table {
+  border: none;
+  border-spacing: 2px;
+}
+
+article td {
+  background-color: rgba(255, 255, 255, .4);
+  padding: .5em;
+}
+article th {
+  background-color: rgba(0, 0, 0, .6);
+  color: #fff;
+  font-weight: normal;
+  padding: .5em;
+}
+
 ${codeCss}
 `;

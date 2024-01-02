@@ -99,6 +99,8 @@ class MyComponent extends Symbiote {
 }
 ``` 
 
+More information about `PubSub` interface, you can find in the [corresponding section](./2x/docs/PubSub/).
+
 ### Inherited context
 
 Property inheritance is a very powerful mechanics that help to control interactions of the components, regarding of their DOM position and hierarchy. It works very similar to the CSS properties cascade model.

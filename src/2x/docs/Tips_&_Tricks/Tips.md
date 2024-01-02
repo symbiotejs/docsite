@@ -1,2 +1,4 @@
 # Tips & Tricks
 
+- SEO tips
+- 

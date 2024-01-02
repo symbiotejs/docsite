@@ -7,6 +7,9 @@ principles, that already existing as the native Web Platform features, and have 
 We don't create the new runtimes, new compilers or the new language syntax. We just adding features to the existing 
 modern DOM API to make your DX better.
 
+- **Symbiote.js** encourages the [loosely coupled architecture](https://en.wikipedia.org/wiki/Loose_coupling) and abstraction, 
+allowing the creation of highly flexible and easily extensible solutions.
+
 - **Symbiote.js** is built upon a modern web platform features and utilize native browser APIs
 instead of using an excess abstractions. Symbiote.js - is what you get after Occam's razor
 done it's work.
