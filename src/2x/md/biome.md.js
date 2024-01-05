@@ -16,9 +16,9 @@ Example:
 let template = html\`<div>MY_TEMPLATE</div>\`;
 
 let styles = css\`
-div {
-  color: #f00;
-}
+  div {
+    color: #f00;
+  }
 \`;
 \`\`\`
 
