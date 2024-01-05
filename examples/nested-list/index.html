@@ -1,0 +1,14 @@
+<nest-app>
+  <button bind="onclick: generateData">{{buttonActionName}} list data</button>
+  <div itemize="data">
+    <div>{{name}}</div>
+    <div itemize="nestedData">
+      <div>{{nestedName}}</div>
+      <div>{{nestedText}}</div>
+      <div itemize="nestedData">
+        <div>{{nestedName}}</div>
+        <div>{{nestedText}}</div>
+      </div>
+    </div>
+  </div>
+</nest-app>

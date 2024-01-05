@@ -1,0 +1,15 @@
+<h3>Manual data context name setting (same level elements):</h3>
+<ctx-el ctx="ctx1"></ctx-el>
+<ctx-el ctx="ctx1"></ctx-el>
+
+<h3>Data context automatic inheritance:</h3>
+<ctx-el>
+  <ctx-el></ctx-el>
+</ctx-el>  
+
+<h3>CSS based data context:</h3>
+<div style="--ctx: 'ctx1'">
+  <ctx-el>
+    <ctx-el></ctx-el>
+  </ctx-el>
+</div>

@@ -1,7 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "build": "node ./build.js",
+    "copy-examples": "cp -r ./examples/ ./dist/examples/",
+    "build": "node ./build.js && npm run copy-examples",
     "dev": "node ./watch.js"
   },
   "dependencies": {
@@ -12,7 +13,8 @@
     "@types/node": "^18.7.23",
     "codemirror": "^6.0.1",
     "highlight.js": "^11.6.0",
-    "marked": "^4.1.0"
+    "marked": "^4.1.0",
+    "thememirror": "^2.0.1"
   },
   "devDependencies": {
     "@symbiotejs/symbiote": "^1.11.6",

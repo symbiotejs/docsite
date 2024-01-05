@@ -5,9 +5,10 @@ let b64Logo = btoa(logo(72));
 /**
  * 
  * @param {String} [base] 
+ * @param {String} [script] 
  * @returns 
  */
-export default function(base = './') {
+export default function(base = './', script = '') {
   return /*html*/ `
   <head>
     <base href="${base}">
@@ -25,7 +26,7 @@ export default function(base = './') {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./2x/css/index.css">
-    <script src="./2x/js/index.js" type="module"></script>
+    ${script ? script : ''}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RZEGMKNNR"></script>
     <script>

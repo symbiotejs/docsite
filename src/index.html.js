@@ -4,7 +4,7 @@ import sections from './2x/home/sections.js';
 export default /*html*/ `
 <!DOCTYPE html>
 <html lang="en">
-${head()}
+${head(undefined, '<script src="./2x/js/index.js" type="module"></script>')}
 <body>
   <card-el clr-1>
     <img src="./svg/logo/index.svg" alt="Symbiote.js">
@@ -31,8 +31,8 @@ ${head()}
     <card-el double clr-2>Live example</card-el>
   </a>
   
-  <a href="./2x/cookbook/">
-    <card-el clr-4>Cookbook</card-el>
+  <a href="#playground">
+    <card-el clr-4>Playground</card-el>
   </a>
 
   <a href="#biome">

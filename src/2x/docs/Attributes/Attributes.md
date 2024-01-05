@@ -21,7 +21,7 @@ MyComponent.observedAttributes = [
 
 Also, you can bind attributes to property values directly:
 ```js
-class MyComponent extends BaseComponent {
+class MyComponent extends Symbiote {
 
   init$ = {
     myProp: '',

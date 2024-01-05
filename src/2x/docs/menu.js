@@ -11,8 +11,8 @@ let items = [
   'PubSub',
   'Styling',
   'Routing',
-  'Types',
-  'Tips & Tricks',
+  // 'Types',
+  // 'Tips & Tricks',
 ];
 
 /**

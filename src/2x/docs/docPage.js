@@ -1,5 +1,5 @@
 import head from '../tpl/head.htm.js';
-import { md2html, folders } from '../../../lib/index.js';
+import { md2html } from '../../../lib/index.js';
 import menu from './menu.js';
 
 /**
@@ -16,7 +16,7 @@ export async function docPage(mdTxt, menuItem) {
     <body style="display:block">
       <layout-el>
         ${menu(menuItem)}
-        <article>${await md2html(mdTxt)}</article>
+        <article>${await md2html(mdTxt, true)}</article>
       </layout-el>
     </body>
     </html>

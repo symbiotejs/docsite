@@ -18,6 +18,36 @@ export default /*html*/ `
   <section-inner clr-2>${await md('../src/2x/md/live.md.js')}</section-inner>
 </section>
 
+<section id="playground">
+  ${closeBtn}
+  <section-inner clr-4>
+    <h2>Basics</h2>
+    <ul>
+      <li><a href="./2x/playground/basic/" target="_blank">Basic example</a></li>
+      <li><a href="./2x/playground/tag-names/" target="_blank">Tag names</a></li>
+    </ul>
+
+    <h2>Templates</h2>
+    <ul>
+      <li><a href="./2x/playground/template/" target="_blank">Manual template rendering</a></li>
+      <li><a href="./2x/playground/template-processor/" target="_blank">Template processor</a></li>
+    </ul>
+
+    <h2>Data contexts</h2>
+    <ul>
+      <li><a href="./2x/playground/data-context/" target="_blank">Data context</a></li>
+      <li><a href="./2x/playground/context-types/" target="_blank">Context types</a></li>
+    </ul>
+
+    <h2>Lists</h2>
+    <ul>
+      <li><a href="./2x/playground/dynamic-list/" target="_blank">Dynamic list rendering</a></li>
+      <li><a href="./2x/playground/list/" target="_blank">Alternative list rendering</a></li>
+      <li><a href="./2x/playground/nested-list/" target="_blank">Nested list</a></li>
+    </ul>
+  </section-inner>
+</section>
+
 <section id="biome">
   ${closeBtn}
   <section-inner>${await md('../src/2x/md/biome.md.js')}</section-inner>

@@ -52,7 +52,7 @@ article a {
   text-decoration: underline;
 }
  
-article h3, h2 {
+article h3, article h2 {
   margin-top: 3em;
 }
 
@@ -143,7 +143,7 @@ card-el[max] {
   color: #fff;
 }
 [clr-4] {
-  background-color: #fff;
+  background-color: #ccc;
 }
 [clr-5] {
   background-color: #ffae6a;

@@ -1,4 +1,4 @@
-const bgPath = '../svg/bg/index.svg';
+const bgPath = '../../svg/bg/index.svg';
 
 export default /*css*/ `
 body {
@@ -114,6 +114,19 @@ article a {
 
 p {
   margin-bottom: var(--gap-mid);
+}
+
+a[banner-new] {
+  display: flex;
+  justify-content: center;
+  background-color: #95218e;
+  background: linear-gradient(to left, #95218e, #000);
+  color: #fff;
+  margin-top: var(--gap-mid);
+  padding: var(--gap-max);
+  border-radius: var(--r2);
+  text-decoration: none;
+  font-size: 24px;
 }
 
 promo-el {
