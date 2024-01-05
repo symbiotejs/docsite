@@ -188,6 +188,7 @@ section a[close] {
   display: block;
   padding: 20px;
   padding-left: 50px;
+  color: #fff;
 }
 
 section-inner {
