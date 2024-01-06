@@ -4,7 +4,7 @@ export default /*md*/ `
 You can get your own personalized sponsor-tile at the symbiotejs.org homepage 
 for only 100$/month. 
 
-Please, contact us via [sponsor@symbiotejs.org](mailto:sponsor@symbiotejs.org)
+Please, contact us via [symbiote.js@gmail.com](mailto:symbiote.js@gmail.com)
 
 Or you can make single donation using crypto currency: 
 

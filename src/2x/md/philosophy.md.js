@@ -2,8 +2,8 @@ export default /*md*/ `
 ## Philosophy
 
 > Unlike many other frontend libraries and frameworks, **Symbiote.js** is designed as a **DOM API higher level extension**, 
-not an independent external abstraction. And this is a main idea. <br /><br />We are not inventing the wheel, we evolve 
-principles, that already existing as the native Web Platform features, and have proved their efficiency. 
+not an independent external abstraction. And this is a main idea. <br /><br />We are not inventing the wheel or to reinvent
+the web platform, we evolve principles, that already existing as the native Web Platform features, and have proved their efficiency. 
 We don't create the new runtimes, new compilers or the new language syntax. We just adding features to the existing 
 modern DOM API to make your DX better.
 
