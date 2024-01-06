@@ -1,0 +1,11 @@
+/* css */
+
+.css-data-1 {
+  --heading: 'CSS Data 1';
+  --text: 'Some text...';
+}
+
+.css-data-2 {
+  --heading: 'CSS Data 2';
+  --text: 'Some other text...';
+}

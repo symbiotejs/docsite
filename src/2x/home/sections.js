@@ -37,6 +37,7 @@ export default /*html*/ `
     <ul>
       <li><a href="./2x/playground/data-context/" target="_blank">Data context</a></li>
       <li><a href="./2x/playground/context-types/" target="_blank">Context types</a></li>
+      <li><a href="./2x/playground/css-data/" target="_blank">CSS Data</a></li>
     </ul>
 
     <h2>Lists</h2>
@@ -46,7 +47,7 @@ export default /*html*/ `
       <li><a href="./2x/playground/nested-list/" target="_blank">Nested list</a></li>
     </ul>
 
-    <h2>L10n</h2>
+    <h2>Misc</h2>
     <ul>
       <li><a href="./2x/playground/l10n/" target="_blank">Localization</a></li>
     </ul>
