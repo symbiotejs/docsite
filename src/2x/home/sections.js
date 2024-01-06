@@ -45,6 +45,11 @@ export default /*html*/ `
       <li><a href="./2x/playground/list/" target="_blank">Alternative list rendering</a></li>
       <li><a href="./2x/playground/nested-list/" target="_blank">Nested list</a></li>
     </ul>
+
+    <h2>L10n</h2>
+    <ul>
+      <li><a href="./2x/playground/l10n/" target="_blank">Localization</a></li>
+    </ul>
   </section-inner>
 </section>
 
