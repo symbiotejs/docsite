@@ -11,7 +11,7 @@ class MyApp extends Symbiote {
   }
 
   initCallback() {
-    this.render(HTML, true);
+    this.render(HTML);
   }
 
 }

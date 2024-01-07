@@ -12,7 +12,7 @@ let lMap = {
     comments: 'Comentarios',
     likes: 'Gustos',
   },
-}
+};
 
 // Create localization context and set the default locale:
 let l10nCtx = PubSub.registerCtx(lMap.EN, 'L10N');
