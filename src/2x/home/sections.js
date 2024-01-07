@@ -31,6 +31,7 @@ export default /*html*/ `
     <ul>
       <li><a href="./2x/playground/template/" target="_blank">Manual template rendering</a></li>
       <li><a href="./2x/playground/template-processor/" target="_blank">Template processor</a></li>
+      <li><a href="./2x/playground/external-template/" target="_blank">External template</a></li>
     </ul>
 
     <h2>Data contexts</h2>
