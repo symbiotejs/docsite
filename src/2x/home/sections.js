@@ -51,6 +51,7 @@ export default /*html*/ `
     <h2>Misc</h2>
     <ul>
       <li><a href="./2x/playground/l10n/" target="_blank">Localization</a></li>
+      <li><a href="./2x/playground/ssr-hydration/" target="_blank">SSR + hydration</a></li>
     </ul>
   </section-inner>
 </section>
