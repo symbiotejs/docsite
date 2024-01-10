@@ -17,7 +17,7 @@
     "thememirror": "^2.0.1"
   },
   "devDependencies": {
-    "@symbiotejs/symbiote": "^2.0.0-alpha.23",
+    "@symbiotejs/symbiote": "^2.0.2",
     "esbuild": "^0.17.10"
   }
 }

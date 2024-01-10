@@ -1,0 +1,26 @@
+
+<my-com>
+  <button bind="onclick: onUpdate">Update</button>
+  <my-com>
+    <h3>Nested component</h3>
+    <div>{{^--text}}</div>
+  </my-com>
+</my-com>
+
+<my-com>
+  <h1 bind="textContent: --heading">Initial heading</h1>
+  <div bind="textContent: --text">Initial text...</div>
+</my-com>
+
+<div container>
+  <my-com>
+    <h1 bind="textContent: --heading">Initial heading</h1>
+    <div bind="textContent: --text">Initial text...</div>
+  </my-com>
+</div>
+
+<my-com class="my-class">
+  <h1>{{--heading}}</h1>
+  <h2>{{--local-custom-data}}</h2>
+  <div>{{--text}}</div>
+</my-com>

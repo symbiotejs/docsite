@@ -285,4 +285,19 @@ The reason is that this function can trigger unexpected lifecycle callbacks in t
 DOM structure and should be used with attention to that.
 
 For the most cases, when slots are necessary, use components with a Shadow DOM mode enabled.
+
+### 14. SSR Mode
+
+Symbiote.js is very easy to use with SSR:
+
+\`\`\`js
+import Symbiote from '@symbiotejs/symbiote';
+
+class MyComponent extends Symbiote {
+  ssrMode = true;
+}
+\`\`\`
+
+Now you can create the markup for your components on the server and connect it to the Symbiote.js 
+state just with a one simple flag - \`ssrMode\`.
 `;

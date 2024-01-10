@@ -1,14 +1,15 @@
 import Symbiote from 'symbiote';
 
 class MyApp extends Symbiote {
-  processInnerHtml = true;
+  ssrMode = true;
 
   init$ = {
     heading: 'Some heading after hydration',
     text: 'Some text after hydration...',
 
     onUpdate: () => {
-      alert('Hello Symbiote.js!');
+      this.notify('heading');
+      this.notify('text');
     },
   }
 

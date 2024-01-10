@@ -52,6 +52,7 @@ export default /*html*/ `
     <ul>
       <li><a href="./2x/playground/l10n/" target="_blank">Localization</a></li>
       <li><a href="./2x/playground/ssr-hydration/" target="_blank">SSR + hydration</a></li>
+      <!-- <li><a href="./2x/playground/ssr-css/" target="_blank">SSR + CSS Data</a></li> -->
     </ul>
   </section-inner>
 </section>

@@ -1,0 +1,22 @@
+:root {
+  --heading: 'Root CSS heading';
+  --text: 'Root CSS text...';
+}
+
+[container] {
+  --heading: 'Container heading';
+  --text: 'Container text...';
+}
+
+.my-class {
+  --heading: 'CSS class heading';
+  --text: 'CSS class text...';
+  --local-custom-data: 'Some custom data in custom template...'
+}
+
+my-com {
+  display: block;
+  padding: 20px;
+  border: 1px solid blue;
+  margin-bottom: 10px;
+}
