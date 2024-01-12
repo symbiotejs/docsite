@@ -1,4 +1,4 @@
-import { BaseComponent } from 'https://esm.sh/@symbiotejs/symbiote';
+import { BaseComponent } from 'https://esm.sh/@symbiotejs/symbiote@1.11.7';
 
 import { basicSetup, EditorView } from 'codemirror';
 import { javascript } from '@codemirror/lang-javascript';
