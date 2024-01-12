@@ -9,7 +9,7 @@ import { html as htm } from '@codemirror/lang-html';
 import { css } from '@codemirror/lang-css';
 import { dracula } from 'thememirror';
 
-const symUrl = 'https://cdn.jsdelivr.net/npm/@symbiotejs/symbiote@2.0.2/core/index.js/+esm';
+const symUrl = 'https://cdn.jsdelivr.net/npm/@symbiotejs/symbiote/core/index.js/+esm';
 const langExtensions = {js: javascript, htm, css};
 const defaultResultUrl = URL.createObjectURL(new Blob([
   /*html*/ `<h2>⏳ Wait a bit...</h2>`
