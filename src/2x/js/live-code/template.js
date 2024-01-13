@@ -16,6 +16,7 @@ export default html`
 
 <div viewport>
   <div toolbar>
+    <button ${{onclick: 'onReload'}}>Reload</button>
     <button ${{onclick: 'openSeparate'}}>Open in new tab ↗</button>
   </div>
   <iframe ${{'@src': 'resultUrl'}}></iframe>

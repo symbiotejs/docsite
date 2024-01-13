@@ -34,6 +34,9 @@ export class LiveCode extends Symbiote {
     openSeparate: () => {
       window.open(this.$.resultUrl);
     },
+    onReload: () => {
+      this.renderResult();
+    },
     onTab: (e) => {
       let tabName = e.target.getAttribute('tab');
       if (tabName) {

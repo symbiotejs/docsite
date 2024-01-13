@@ -1,0 +1,24 @@
+/* css */
+
+icon-el {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.1em;
+  width: 1.1em;
+  margin-right: .3em;
+  transform: translateY(.2em);
+
+  > svg {
+    height: 100%;
+    width: 100%;
+
+    path {
+      fill: currentColor;
+    }
+  }
+}
+
+my-com {
+  color: blue;
+}

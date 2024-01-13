@@ -3,26 +3,32 @@ import Symbiote, { html } from 'symbiote';
 class MyApp extends Symbiote {
 
   init$ = {
-    first: 'FIRST',
-    attr: '',
-    '*second': 'SECOND',
-    'myctx/third': 'THIRD',
-    onClick: () => {
-      this.$.first = Date.now();
+    localCtxProp: 'LOCAL',
+    attributeProp: 'Initial value...',
+    'X/namedCtxProp': 'NAMED',
+    '*sharedCtxProp': 'SHARED',
+
+    onUpdate: () => {
+      let updStr = ' updated... ';
+      this.$.localCtxProp += updStr;
+      this.$.attributeProp += updStr;
+      this.$['X/namedCtxProp'] += updStr;
+      this.$['*sharedCtxProp'] += updStr;
     },
   };
 
 }
 
 MyApp.template = html`
-  <div ${{onclick: 'onClick'}}>{{first}}</div>
-  <div>{{attr}}</div>
-  <div>{{*second}}</div>
-  <div>{{myctx/third}}</div>
+  <div>{{localCtxProp}}</div>
+  <div>{{attributeProp}}</div>
+  <div>{{X/namedCtxProp}}</div>
+  <div>{{*sharedCtxProp}}</div>
+  <button ${{onclick: 'onUpdate'}}>Update</button>
 `;
 
 MyApp.bindAttributes({
-  'attr-test': 'attr',
+  'attr-test': 'attributeProp',
 });
 
 MyApp.reg('my-app');

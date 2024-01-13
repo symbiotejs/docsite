@@ -30,13 +30,13 @@ export default /*html*/ `
     <h2>Templates</h2>
     <ul>
       <li><a href="./2x/playground/template/" target="_blank">Manual template rendering</a></li>
-      <li><a href="./2x/playground/template-processor/" target="_blank">Template processor</a></li>
+      <li><a href="./2x/playground/template-processor/" target="_blank">Template processor (Custom styling)</a></li>
       <li><a href="./2x/playground/external-template/" target="_blank">External template</a></li>
     </ul>
 
-    <h2>Data contexts</h2>
+    <h2>Context</h2>
     <ul>
-      <li><a href="./2x/playground/data-context/" target="_blank">Data context</a></li>
+      <li><a href="./2x/playground/data-context/" target="_blank">Shared context</a></li>
       <li><a href="./2x/playground/context-types/" target="_blank">Context types</a></li>
       <li><a href="./2x/playground/css-data/" target="_blank">CSS Data</a></li>
     </ul>
@@ -52,6 +52,7 @@ export default /*html*/ `
     <ul>
       <li><a href="./2x/playground/l10n/" target="_blank">Localization</a></li>
       <li><a href="./2x/playground/ssr-hydration/" target="_blank">SSR + hydration</a></li>
+      <li><a href="./2x/playground/icons/" target="_blank">Icons</a></li>
       <!-- <li><a href="./2x/playground/ssr-css/" target="_blank">SSR + CSS Data</a></li> -->
     </ul>
   </section-inner>

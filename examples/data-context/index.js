@@ -14,14 +14,5 @@ class CtxEl extends Symbiote {
 
 }
 
-CtxEl.rootStyles = `
-  ctx-el {
-    display: inline-block;
-    border: 1px solid #00f;
-    padding: 20px;
-    user-select: none;
-  }
-`;
-
-CtxEl.template = '<span>{{*time}}</span><slot></slot>';
+CtxEl.template = '<span>{{*time}}</span>';
 CtxEl.reg('ctx-el');
