@@ -14,5 +14,5 @@ class CtxEl extends Symbiote {
 
 }
 
-CtxEl.template = '<span>{{*time}}</span>';
+CtxEl.template = '{{*time}}';
 CtxEl.reg('ctx-el');

@@ -6,7 +6,7 @@ export default /*html*/ `
 <html lang="en">
 ${head(undefined, '<script src="./2x/js/index.js" type="module"></script>')}
 <body>
-  <card-el clr-1>
+  <card-el clr-1 logo>
     <img src="./svg/logo/index.svg" alt="Symbiote.js">
   </card-el>
 

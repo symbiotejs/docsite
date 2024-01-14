@@ -41,7 +41,6 @@ html, body {
 body {
   display: flex;
   flex-wrap: wrap;
-  padding-right: 5px;
   font-size: 14px;
 }
 a {
@@ -112,7 +111,7 @@ card-el {
   max-width: 100%;
   background-color: #c7dd44;
   color: #000;
-  padding: 20px;
+  padding: 40px;
   margin-top: 5px;
   margin-left: 5px;
   font-size: 18px;
@@ -132,6 +131,11 @@ card-el[triple] {
 card-el[max] {
   width: 100%;
 }
+card-el[logo] img {
+  width: 100%;
+  height: 100%;
+}
+
 [clr-1] {
   background-color: rgba(255, 255, 255, .1);
 }
@@ -281,6 +285,18 @@ article th {
   color: #fff;
   font-weight: normal;
   padding: .5em;
+}
+
+
+@media screen and (max-width: 580px) {
+  card-el {
+    width: calc(100vw - 10px) !important;
+  }
+
+  section-inner {
+    margin: 10px;
+    padding: 20px;
+  }
 }
 
 ${codeCss}
