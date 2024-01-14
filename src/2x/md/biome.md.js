@@ -3,7 +3,7 @@ export default /*md*/ `
 
 Here we provide a set of the basic recommendations for the development environment setup.
 Note, that this is only recommendations, you can chose any other approach which is more
-relevant to your experience of needs.
+relevant to your experience or needs.
 
 ### 1. Template syntax highlight
 
