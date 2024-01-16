@@ -43,9 +43,9 @@ export default /*html*/ `
 
     <h2>Lists</h2>
     <ul>
-      <li><a href="./2x/playground/dynamic-list/" target="_blank">Dynamic list rendering</a></li>
-      <li><a href="./2x/playground/list/" target="_blank">Alternative list rendering</a></li>
-      <li><a href="./2x/playground/nested-list/" target="_blank">Nested list</a></li>
+      <li><a href="./2x/playground/dynamic-list/" target="_blank">Dynamic list rendering (Reactive table)</a></li>
+      <li><a href="./2x/playground/list/" target="_blank">Alternative list rendering (TODO list)</a></li>
+      <li><a href="./2x/playground/nested-list/" target="_blank">Nested lists</a></li>
     </ul>
 
     <h2>Misc</h2>

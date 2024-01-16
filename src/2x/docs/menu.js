@@ -10,6 +10,7 @@ let items = [
   'Attributes',
   'PubSub',
   'Styling',
+  'Flags',
   'Routing',
   // 'Types',
   // 'Tips & Tricks',
