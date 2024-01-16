@@ -1,7 +1,8 @@
 # Flags
 
-Flags are the set of settings which are enabling or disabling some features or behavior. Here is the complete list of them:
+Flags are the set of settings which are enabling or disabling some features or behavior. 
 
+Here is the complete list of them:
 - `renderShadow`
 - `ssrMode`
 - `isVirtual`
@@ -39,6 +40,8 @@ class MyComponent extends Symbiote {
 }
 ```
 
+Live example: https://symbiotejs.org/2x/playground/ssr-hydration/
+
 ### isVirtual
 
 Enables workflow, when component will render its own template only, without the wrapping Custom Element. In this case, Custom Element will be used as a placeholder only and disappear after initial rendering. All data bindings will continue to work just in memory.
@@ -62,7 +65,18 @@ class MyComponent extends Symbiote {
 
   allowCustomTemplate = true; // Default is 'false'
 
+  // ...
 }
+```
+
+Then you can use the `use-template` attribute to connect some external template to your component:
+```html
+
+<template id="my-tpl">
+  <h1>{{someHeading}}</h1>
+</template>
+
+<my-component use-template="template#my-tpl"><my-component>
 ```
 
 ### pauseRender
@@ -74,6 +88,15 @@ Example:
 class MyComponent extends Symbiote {
 
   pauseRender = true; // Default is 'false'
+
+  initCallback() {
+    fetch('../my-data.json').then((response) => {
+      response.json().then((data) => {
+        this.set$(data);
+        this.render();
+      });
+    });
+  }
 
 }
 ```
@@ -88,7 +111,15 @@ class MyComponent extends Symbiote {
 
   processInnerHtml = true; // Default is 'false'
 
+  // ...
 }
+```
+
+HTML example:
+```html
+<my-component>
+  <h1>{{someHeading}}</h1>
+</my-component>
 ```
 
 ### readyToDestroy
@@ -116,4 +147,8 @@ class MyComponent extends Symbiote {
 
 }
 ```
-This also could be set with a `ctx-owner` HTML-attribute.
+
+This also could be set with a `ctx-owner` HTML-attribute:
+```html
+<my-component ctx-owner></my-component>
+```
