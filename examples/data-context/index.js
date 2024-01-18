@@ -6,7 +6,7 @@ class CtxEl extends Symbiote {
     '*time': 'Click me!',
   };
 
-  initCallback() {
+  renderCallback() {
     this.onclick = () => {
       this.$['*time'] = Date.now();
     };

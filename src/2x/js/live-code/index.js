@@ -19,6 +19,11 @@ const defaultResultUrl = URL.createObjectURL(new Blob([
 
 export class LiveCode extends Symbiote {
 
+  /** @type {'js' | 'css' | 'htm'}  */
+  #currentTab = 'js';
+  /** @type {Boolean} */
+  #abortTyping = false;
+
   /** @type {Object<string, EditorView>} */
   editors = {
     htm: null,
@@ -27,7 +32,7 @@ export class LiveCode extends Symbiote {
   }
 
   init$ = {
-    html: '',
+    htm: '',
     js: '',
     css: '',
     resultUrl: defaultResultUrl,
@@ -37,14 +42,19 @@ export class LiveCode extends Symbiote {
     onReload: () => {
       this.renderResult();
     },
+    onSourceReload: () => {
+      this.#abortTyping = true;
+      this.initSrc(this.#currentTab, this.$[this.#currentTab], false);
+    },
     onTab: (e) => {
       let tabName = e.target.getAttribute('tab');
       if (tabName) {
+        this.#currentTab = tabName;
         Object.values(this.ref).forEach((el) => {
           el.removeAttribute('current');
         });
         e.target.setAttribute('current', '');
-        this.ref[tabName].setAttribute('current', '');
+        this.ref[this.#currentTab].setAttribute('current', '');
       }
     },
   }
@@ -85,6 +95,21 @@ export class LiveCode extends Symbiote {
   /**
    * 
    * @param {'htm' | 'js' | 'css'} type 
+   */
+  clear(type) {
+    let edtr = this.editors[type];
+    let transaction = edtr.state.update({
+      changes: {
+        from: 0,
+        to: edtr.state.doc.toString().length,
+        insert: '',
+      }});
+      edtr.dispatch(transaction);
+  }
+
+  /**
+   * 
+   * @param {'htm' | 'js' | 'css'} type 
    * @param {String} url 
    * @param {Boolean} typing 
    * @returns 
@@ -95,21 +120,28 @@ export class LiveCode extends Symbiote {
     }
     window.fetch(url).then(async (resp) => {
       resp.text().then((code) => {
-        this.editors[type] = new EditorView({
-          doc: '',
-          extensions: [
-            basicSetup,
-            this.updListener,
-            langExtensions[type](),
-            dracula,
-          ],
-          parent: this.ref[type],
-        });
+        if (!this.editors[type]) {
+          this.editors[type] = new EditorView({
+            doc: '',
+            extensions: [
+              basicSetup,
+              this.updListener,
+              langExtensions[type](),
+              dracula,
+            ],
+            parent: this.ref[type],
+          });
+        }
+        this.clear(type);
         if (typing) {
           let chars = code.split('');
           chars.forEach((char, idx) => {
             // let timeout = (char === ' ' || char === '\n') ? 300 : 100;
             window.setTimeout(() => {
+              if (this.#abortTyping) {
+                return;
+              }
+
               let transaction = this.editors[type].state.update({
                 changes: {
                   from: idx, 
@@ -152,7 +184,7 @@ export class LiveCode extends Symbiote {
     this.sub('js', (url) => {
       this.initSrc('js', url, true);
     });
-    this.sub('html', (url) => {
+    this.sub('htm', (url) => {
       this.initSrc('htm', url);
     });
     this.sub('css', (url) => {
@@ -169,7 +201,7 @@ export class LiveCode extends Symbiote {
 }
 
 LiveCode.bindAttributes({
-  html: 'html',
+  html: 'htm',
   js: 'js',
   css: 'css',
 });

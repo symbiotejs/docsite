@@ -7,6 +7,7 @@ export default html`
     <button tab="htm" ref="htmTab">HTML</button>
     <button tab="js" current ref="jsTab">JS</button>
     <button tab="css" ref="cssTab">CSS</button>
+    <button ${{onclick: 'onSourceReload'}}>Reload</button>
   </div>
   <div code ref="htm"></div>
   <div code current ref="js"></div>

@@ -14,11 +14,11 @@ class ListItem extends Symbiote {
     return this.ref.checkbox.checked;
   }
 
-  clear = () => {
+  clear() {
     this.$.text = '';
   };
 
-  initCallback() {
+  renderCallback() {
     this.ref.edit.focus();
   }
 
@@ -26,7 +26,10 @@ class ListItem extends Symbiote {
 
 ListItem.template = html`
   <input ref="checkbox" type="checkbox">
-  <div ref="edit" contenteditable="true">{{text}}</div>
+  <div 
+    ref="edit" 
+    contenteditable="true"
+    ${{textContent: 'text'}}></div>
   <button ${{onclick: 'remove'}}>Remove Item</button>
 `;
 ListItem.reg('list-item');
@@ -59,7 +62,7 @@ class MyApp extends Symbiote {
     },
   }
 
-  initCallback() {
+  renderCallback() {
     // Add first item:
     this.$.addItem();
   }

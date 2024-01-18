@@ -8,7 +8,7 @@ class TableRow extends Symbiote {
     date: 0,
   }
 
-  initCallback() {
+  renderCallback() {
     this.selected = false;
     this.onclick = () => {
       this.selected = !this.selected;
@@ -49,8 +49,11 @@ class TableApp extends Symbiote {
 }
 
 TableApp.template = html`
-<button ${{onclick: 'generateTableData'}}>{{buttonActionName}} table data</button>
-<table itemize="tableData" item-tag="table-row"></table>
+  <button 
+    ${{onclick: 'generateTableData'}}>{{buttonActionName}} table data</button>
+  <table 
+    itemize="tableData" 
+    item-tag="table-row"></table>
 `;
 
 TableApp.reg('table-app');
