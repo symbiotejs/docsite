@@ -1,6 +1,6 @@
 declare module 'https://*';
 
-declare module 'https://esm.sh/@symbiotejs/symbiote' {
+declare module 'https://cdn.jsdelivr.net/npm/@symbiotejs/symbiote/core/index.js/+esm' {
   export * from '@symbiotejs/symbiote';
 }
 

@@ -32,6 +32,7 @@ ListItem.template = html`
     ${{textContent: 'text'}}></div>
   <button ${{onclick: 'remove'}}>Remove Item</button>
 `;
+
 ListItem.reg('list-item');
 
 // Application element:
@@ -77,4 +78,5 @@ MyApp.template = html`
     <button ${{onclick: 'removeChecked'}}>Remove Checked</button>
   </div>
 `;
+
 MyApp.reg('my-app');

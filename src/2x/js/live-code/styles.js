@@ -29,7 +29,11 @@ iframe {
   border-radius: 4px;
 }
 button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   height: 32px;
+  min-width: 32px;
   padding-left: .8em;
   padding-right: .8em;
   background-color: rgba(255, 255, 255, .1);
@@ -61,5 +65,22 @@ button[current] {
 }
 [code][current] {
   display: block;
+}
+
+icon-ui {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.4em;
+  width: 1.4em;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  path {
+    fill: currentColor;
+  }
 }
 `;

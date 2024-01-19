@@ -1,5 +1,7 @@
 import { Symbiote } from './lib.js';
 
+import icon from './icon.js';
+
 import { rootCss, shadowCss } from './styles.js';
 import TPL from './template.js';
 
