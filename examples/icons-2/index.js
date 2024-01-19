@@ -7,7 +7,7 @@ const ICONS = {
 };
 
 // Icon component:
-class SvgIco extends Symbiote {
+class IconSvg extends Symbiote {
   init$ = {
     '@name': 'star',
     '+path': () => {
@@ -16,20 +16,20 @@ class SvgIco extends Symbiote {
   }
 }
 
-SvgIco.template = html`
+IconSvg.template = html`
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path ${{'@d': '+path'}}></path>
   </svg>
 `;
 
-SvgIco.reg('svg-ico');
+IconSvg.reg('icon-svg');
 
 // Application component:
 class MyApp extends Symbiote {}
 
 MyApp.template = html`
-  <h1><svg-ico name="star"></svg-ico> Heading</h1>
-  <button><svg-ico name="ok"></svg-ico> Ok</button>
+  <h1><icon-svg name="star"></icon-svg> Heading</h1>
+  <button><icon-svg name="ok"></icon-svg> Ok</button>
 `;
 
 MyApp.reg('my-app');
