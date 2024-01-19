@@ -1,4 +1,4 @@
-import Symbiote from 'symbiote';
+import Symbiote from '@symbiotejs/symbiote';
 
 function nestedDataGen(idx) {
   let data = [];

@@ -1,4 +1,4 @@
-import Symbiote, { html, PubSub } from 'symbiote';
+import Symbiote, { html, PubSub } from '@symbiotejs/symbiote';
 
 // Create localization map:
 let lMap = {

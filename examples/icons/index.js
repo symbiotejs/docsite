@@ -1,4 +1,4 @@
-import Symbiote from 'symbiote';
+import Symbiote from '@symbiotejs/symbiote';
 
 // App Icons (SVG path map):
 const ICON_SET = {

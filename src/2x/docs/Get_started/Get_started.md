@@ -94,13 +94,13 @@ Create the HTML file `my-app.html`:
 <script type="importmap">
   {
     "imports": {
-      "symbiote": "https://esm.run/@symbiotejs/symbiote"
+      "@symbiotejs/symbiote": "https://esm.run/@symbiotejs/symbiote"
     }
   }
 </script>
 
 <script type="module">
-  import Symbiote, { html, css } from 'symbiote';
+  import Symbiote, { html, css } from '@symbiotejs/symbiote';
 
   export class MyComponent extends Symbiote {
 

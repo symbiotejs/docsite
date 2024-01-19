@@ -1,4 +1,4 @@
-import Symbiote, { html } from 'symbiote';
+import Symbiote, { html } from '@symbiotejs/symbiote';
 
 class MyComponent extends Symbiote {
   init$ = {

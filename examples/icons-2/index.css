@@ -1,0 +1,19 @@
+/* css */
+
+svg-ico {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.2em;
+  width: 1.2em;
+  transform: translateY(.2em);
+
+  svg {
+    height: 100%;
+    width: 100%;
+
+    path {
+      fill: currentColor;
+    }
+  }
+}

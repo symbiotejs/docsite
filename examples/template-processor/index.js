@@ -1,4 +1,4 @@
-import Symbiote, { applyStyles } from 'symbiote';
+import Symbiote, { applyStyles } from '@symbiotejs/symbiote';
 
 const styles = {
   host: {

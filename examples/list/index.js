@@ -1,10 +1,9 @@
-import Symbiote, { html } from 'symbiote';
+import Symbiote, { html } from '@symbiotejs/symbiote';
 
 // Item element:
 class ListItem extends Symbiote {
 
   init$ = {
-    text: '',
     remove: () => {
       this.remove();
     },
@@ -43,7 +42,6 @@ class MyApp extends Symbiote {
   }
 
   init$ = {
-    heading: 'List heading:',
     addItem: () => {
       this.ref.list_wrapper.appendChild(new ListItem());
     },
@@ -70,7 +68,6 @@ class MyApp extends Symbiote {
 }
 
 MyApp.template = html`
-  <h2>{{heading}}</h2>
   <div ref="list_wrapper"></div>
   <div class="toolbar">
     <button ${{onclick: 'addItem'}}>Add Item</button>

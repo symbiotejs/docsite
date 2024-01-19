@@ -1,4 +1,4 @@
-import Symbiote from 'symbiote';
+import Symbiote from '@symbiotejs/symbiote';
 
 class MyApp extends Symbiote {
   ssrMode = true;

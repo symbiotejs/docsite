@@ -1,4 +1,4 @@
-import Symbiote, { html } from 'symbiote';
+import Symbiote, { html } from '@symbiotejs/symbiote';
 
 // Dynamic list item component:
 class TableRow extends Symbiote {

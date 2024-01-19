@@ -1,4 +1,4 @@
-import Symbiote from 'symbiote';
+import Symbiote from '@symbiotejs/symbiote';
 
 class Com1 extends Symbiote {}
 Com1.template = `<button>Component 1</button>`;
