@@ -1,5 +1,12 @@
 /* css */
 
+my-com {
+  display: block;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid green;
+}
+
 .css-data-1 {
   --heading: 'CSS Data 1';
   --text: 'Some text...';
