@@ -1,4 +1,4 @@
-import Symbiote, { html, css } from '@symbiotejs/symbiote';
+import Symbiote, { html } from '@symbiotejs/symbiote';
 
 // App Icons (SVG path map):
 const ICONS = {
@@ -27,7 +27,7 @@ IconSvg.reg('icon-svg');
 // Application component:
 class MyApp extends Symbiote {}
 
-MyApp.template = html`
+MyApp.template = /*html*/ `
   <h1><icon-svg name="star"></icon-svg> Heading</h1>
   <button><icon-svg name="ok"></icon-svg> Ok</button>
 `;
