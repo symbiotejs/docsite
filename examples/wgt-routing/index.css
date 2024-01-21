@@ -1,0 +1,37 @@
+/* css */
+
+label {
+  display: block;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+nav {
+  display: block;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid currentColor;
+}
+
+code {
+  white-space: pre;
+  display: block;
+  padding: 10px;
+  background-color: #212121;
+  color: #0ee;
+}
+
+.viewport {
+  padding: 20px;
+  background-color: #eee;
+  border: 1px dashed currentColor;
+}
+
+blockquote {
+  display: block;
+  padding: 10px;
+  margin: 0;
+  margin-top: 20px;
+  background-color: #eee;
+  border-left: 2px solid currentColor;
+}
