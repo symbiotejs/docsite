@@ -60,7 +60,7 @@ AppShell.template = html`
   <h1>Section title: {{R/title}}</h1>
   <h2>Current route: {{R/route}}</h2>
   <label>Navigation panel:</label>
-  <nav itemize="routes">
+  <nav ${{itemize: 'routes'}}>
     <button ${{onclick: '^onNav', '@route': 'route'}}>{{title}}</button>
   </nav>
   <label>Route options:</label>
