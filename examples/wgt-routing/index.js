@@ -59,13 +59,16 @@ AppShell.template = html`
   <h1>Section title: {{R/title}}</h1>
   <h2>Current route: {{R/route}}</h2>
   <label>Navigation panel:</label>
-  <nav ${{itemize: 'routes', onclick: 'onNav'}}>
-    <button ${{'@route': 'route'}}>{{title}}</button>
+  <nav itemize="routes">
+    <button ${{onclick: '^onNav', '@route': 'route'}}>{{title}}</button>
   </nav>
   <label>Route options:</label>
   <code>{{+optionsJson}}</code>
-  <label>Current section wrapper element:</label>
-  <div class="viewport" ${{innerHTML: '+sectionHtml'}}>Current section tag goes here...</div>
+  <label>Wrapper element for the current section:</label>
+  <div class="viewport" ${{
+    innerHTML: '+sectionHtml',
+    '@inner-html': '+sectionHtml', 
+  }}></div>
 `;
 
 AppShell.reg('app-shell');
