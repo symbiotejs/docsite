@@ -28,8 +28,9 @@ const router = PubSub.registerCtx(routes[0], 'R');
 
 class AppShell extends Symbiote {
   init$ = {
+    // Menu items data:
     routes: structuredClone(routes),
-
+    // Computed properties:
     '+optionsJson': () => {
       return JSON.stringify(this.$['R/options'], undefined, 2);
     },
@@ -37,7 +38,7 @@ class AppShell extends Symbiote {
       let sec = this.$['R/route'];
       return `<${sec}-section></${sec}-section>`;
     },
-
+    // Navigation handler:
     onNav: (e) => {
       let route = e.target.getAttribute('route');
       if (route) {
