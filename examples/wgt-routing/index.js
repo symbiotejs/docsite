@@ -48,8 +48,6 @@ class AppShell extends Symbiote {
         if (routeDescriptor) {
           routeDescriptor.options.timestamp = Date.now();
           router.multiPub(routeDescriptor);
-          this.notify('+optionsJson');
-          this.notify('+sectionHtml');
         }
       }
     },

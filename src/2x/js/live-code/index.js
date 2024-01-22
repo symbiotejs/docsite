@@ -11,7 +11,7 @@ import { html as htm } from '@codemirror/lang-html';
 import { css } from '@codemirror/lang-css';
 import { dracula } from 'thememirror';
 
-const symUrl = 'https://cdn.jsdelivr.net/npm/@symbiotejs/symbiote@2.1.0-alpha.2/core/index.js/+esm';
+const symUrl = 'https://cdn.jsdelivr.net/npm/@symbiotejs/symbiote@2.2.0-alpha.0/core/index.js/+esm';
 // const symUrl = 'https://cdn.jsdelivr.net/npm/@symbiotejs/symbiote/core/index.js/+esm';
 const langExtensions = {js: javascript, htm, css};
 const defaultResultUrl = URL.createObjectURL(new Blob([
