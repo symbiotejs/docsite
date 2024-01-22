@@ -1,6 +1,6 @@
 import Symbiote, { html, PubSub } from '@symbiotejs/symbiote';
 
-let routes = [
+const routes = [
   {
     route: 'home',
     title: 'Home',
