@@ -10,9 +10,7 @@ const ICONS = {
 class IconSvg extends Symbiote {
   init$ = {
     '@name': 'star',
-    '+path': () => {
-      return ICONS[this.$['@name']];
-    },
+    '+path': ( () => ICONS[this.$['@name']] ),
   }
 }
 
