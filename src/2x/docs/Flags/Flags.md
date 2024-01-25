@@ -11,6 +11,7 @@ Here is the complete list of them:
 - `processInnerHtml`
 - `readyToDestroy`
 - `ctxOwner`
+- `allowTemplateInits`
 
 ### renderShadow
 
@@ -151,4 +152,23 @@ class MyComponent extends Symbiote {
 This also could be set with a `ctx-owner` HTML-attribute:
 ```html
 <my-component ctx-owner></my-component>
+```
+
+### allowTemplateInits 
+
+This flag enables and disables the automated property initialization from the template mentions.
+
+Example: 
+```js
+class MyComponent extends Symbiote {
+
+  allowTemplateInits = false; // Default is 'true'
+
+}
+
+// The 'heading' property won't be initialized, 
+// and you should add it manually to the 'init$' object:
+MyComponent.template = html`
+  <h1>{{heading}}</h1>
+`;
 ```

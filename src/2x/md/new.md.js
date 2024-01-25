@@ -300,4 +300,45 @@ class MyComponent extends Symbiote {
 
 Now you can create the markup for your components on the server and connect it to the Symbiote.js 
 state just with a one simple flag - \`ssrMode\`.
+
+### 15. Attribute-to-property binding token
+
+Now yo can use the \`@\` token not for the one-way property-to-attribute binding only, but 
+for the attribute dependent property initiation itself:
+\`\`\`js
+class MyComponent extends Symbiote {
+  init$ = {
+    '@my-attribute': 'some initial value...',
+  }
+}
+
+// or use the direct template initiation:
+class MyOtherComponent extends Symbiote {}
+
+MyOtherComponent.template = html\`
+  <h1>{{@my-attribute}}</h2>
+\`;
+\`\`\`
+
+### 16. Template properties initialization flag
+
+\`allowTemplateInits\` flag in now allows to initiate properties from the templates directly.
+
+Example:
+\`\`\`js
+class MyComponent extends Symbiote {
+
+  initCallback() {
+    // Property is already exists:
+    this.$.myProp = 'new value';
+  } 
+
+}
+
+MyComponent.template = html\`
+  <h1>{{myProp}}</h1>
+\`;
+\`\`\`
+
+The default \`allowTemplateInits\` value is \`true\`.
 `;
