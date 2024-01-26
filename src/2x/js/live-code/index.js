@@ -1,7 +1,5 @@
 import { Symbiote } from './lib.js';
 
-import icon from './icon.js';
-
 import { rootCss, shadowCss } from './styles.js';
 import TPL from './template.js';
 
@@ -11,7 +9,7 @@ import { html as htm } from '@codemirror/lang-html';
 import { css } from '@codemirror/lang-css';
 import { dracula } from 'thememirror';
 
-const symUrl = 'https://cdn.jsdelivr.net/npm/@symbiotejs/symbiote@2.2.0/core/index.js/+esm';
+const symUrl = 'https://cdn.jsdelivr.net/npm/@symbiotejs/symbiote/core/index.js/+esm';
 
 const langExtensions = {js: javascript, htm, css};
 const defaultResultUrl = URL.createObjectURL(new Blob([
@@ -203,11 +201,15 @@ export class LiveCode extends Symbiote {
   }
 }
 
+
+
 LiveCode.bindAttributes({
   html: 'htm',
   js: 'js',
   css: 'css',
 });
+
+LiveCode.observedAttributes = ['html', 'js', 'css'];
 
 LiveCode.rootStyles = rootCss;
 LiveCode.shadowStyles = shadowCss;
