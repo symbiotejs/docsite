@@ -1,6 +1,6 @@
 // First, get polyfill to make customizable built-in elements work in Safari:
 import {} from 'https://cdn.jsdelivr.net/npm/@ungap/custom-elements/+esm';
-import Symbiote, { html, css } from '@symbiotejs/symbiote';
+import Symbiote, { html } from '@symbiotejs/symbiote';
 
 // Create custom <option> element class:
 class OptItem extends HTMLOptionElement {
