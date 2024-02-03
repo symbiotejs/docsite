@@ -1,9 +1,10 @@
 table-row {
   display: table-row;
 }
-table-row[selected] {
+table-row.selected {
   background-color: rgba(255, 255, 0, .3);
 }
 td {
-  border: 1px solid currentColor;
+  background-color: rgba(0, 0, 0, .1);
+  padding: 2px;
 }

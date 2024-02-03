@@ -2,21 +2,13 @@ import Symbiote, { html } from '@symbiotejs/symbiote';
 
 // Dynamic list item component:
 class TableRow extends Symbiote {
-  init$ = {
-    rowNum: 0,
-    randomNum: 0,
-    date: 0,
-  }
 
   renderCallback() {
-    this.selected = false;
     this.onclick = () => {
-      this.selected = !this.selected;
-      this.selected 
-        ? this.setAttribute('selected', '') 
-        : this.removeAttribute('selected');
+      this.classList.toggle('selected');
     };
   }
+
 }
 
 TableRow.template = `
@@ -24,17 +16,16 @@ TableRow.template = `
   <td>Random number: {{randomNum}}</td>
   <td>{{date}}</td>
 `;
+
 TableRow.reg('table-row');
 
 // Dynamic list wrapper component:
 class TableApp extends Symbiote {
+
   init$ = {
     tableData: [],
-    buttonActionName: 'Generate',
+
     generateTableData: () => {
-      this.set$({
-        buttonActionName: 'Update',
-      });
       let data = [];
       for (let i = 0; i < 1000; i++) {
         data.push({
@@ -46,14 +37,12 @@ class TableApp extends Symbiote {
       this.$.tableData = data;
     },
   }
+  
 }
 
 TableApp.template = html`
-  <button 
-    ${{onclick: 'generateTableData'}}>{{buttonActionName}} table data</button>
-  <table 
-    itemize="tableData" 
-    item-tag="table-row"></table>
+  <button ${{onclick: 'generateTableData'}}>Generate data</button>
+  <table itemize="tableData" item-tag="table-row"></table>
 `;
 
 TableApp.reg('table-app');
