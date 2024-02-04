@@ -2,22 +2,18 @@
 import {} from 'https://cdn.jsdelivr.net/npm/@ungap/custom-elements/+esm';
 import Symbiote, { html } from '@symbiotejs/symbiote';
 
-// Create custom <option> element class:
-class OptItem extends HTMLOptionElement {
-  // You can add some custom logic here:
-  set text(val) {
-    super.textContent = val;
-  }
-}
-window.customElements.define('option-item', OptItem, { extends: 'option'});
+// Register custom <option> element:
+window.customElements.define('option-item', class extends HTMLOptionElement {}, {
+  extends: 'option',
+});
 
 class MyApp extends Symbiote {
 
   init$ = {
     options: [
-      { value: '1', text: 'Option 1' },
-      { value: '2', text: 'Option 2' },
-      { value: '3', text: 'Option 3' },
+      { value: '1', textContent: 'Option 1' },
+      { value: '2', textContent: 'Option 2' },
+      { value: '3', textContent: 'Option 3' },
     ],
     selectedValue: '1',
   
