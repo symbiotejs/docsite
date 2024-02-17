@@ -21,13 +21,3 @@ IconSvg.template = html`
 `;
 
 IconSvg.reg('icon-svg');
-
-// Application component:
-class MyApp extends Symbiote {}
-
-MyApp.template = /*html*/ `
-  <h1><icon-svg name="star"></icon-svg> Heading</h1>
-  <button><icon-svg name="ok"></icon-svg> Ok</button>
-`;
-
-MyApp.reg('my-app');

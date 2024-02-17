@@ -2,7 +2,7 @@ import Symbiote from '@symbiotejs/symbiote';
 
 // Direct template rendering form a string:
 
-const HTML = '<div>{{text}}</div>';
+const HTML = '<h2>{{text}}</h2>';
 
 class MyApp extends Symbiote {
 
