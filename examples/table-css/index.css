@@ -1,0 +1,16 @@
+table-css {
+  display: table;
+  border-spacing: 2px;
+  border-collapse: separate;
+  table-row {
+    display: table-row;
+    &.selected {
+      background-color: rgba(255, 0, 200, .3);
+    }
+    td-css {
+      display: table-cell;
+      border: 1px solid currentColor;
+      padding: 4px;
+    }
+  }
+}
