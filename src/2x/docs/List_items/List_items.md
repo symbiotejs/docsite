@@ -6,12 +6,14 @@ To create the dynamic list inside your component, use `itemize` HTML attribute f
 ```js
 MyComponent.template = html`
 <div itemize="userList">
-  <div>First name: {{firstName}}</div>
-  <div>Second name: {{secondName}}</div>
+  <template>
+    <div>First name: {{firstName}}</div>
+    <div>Second name: {{secondName}}</div>
+  </template>
 </div>`;
 ```
 
-The attribute value should point to the certain key in component's data context:
+The `itemize` attribute value should point to the certain key in component's data context:
 ```js
 class MyComponent extends Symbiote {
 
@@ -89,8 +91,10 @@ To create custom named tag for your list items, use `item-tag` attribute:
 ```js
 MyComponent.template = html`
 <div itemize="userList" item-tag="user-card">
-  <div>{{firstName}}</div>
-  <div>{{secondName}}</div>
+  <template>
+    <div>{{firstName}}</div>
+    <div>{{secondName}}</div>
+  </template>
 </div>`;
 ```
 
@@ -143,7 +147,22 @@ html`
   </div>
 `;
 ```
-Note, that data binding keys will be connected with a fields of each data entry, not the parent component itself.
+> Note, that data binding keys will be connected with a fields of each data entry, not the parent component itself.
+
+We recommend to wrap item template into the `template` tag each time when you use this approach:
+```js
+html`
+  <div ${{itemize: 'listDate', 'item-tag': 'my-list-item'}}>
+    <template>
+      <div>{{firstName}}</div>
+      <div>{{secondName}}</div>
+    </template>
+  </div>
+`;
+```
+> It helps browser to ignore some specific tag behavior before the template will be copied as a item contents.
+
+> When you using an external component as a list item, template wrapping is not necessary.
 
 ### Possible data types and structure
 

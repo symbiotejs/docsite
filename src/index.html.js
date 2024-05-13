@@ -13,7 +13,7 @@ ${head(undefined, '<script src="./2x/js/index.js" type="module"></script>')}
   <a href="#new">
     <card-el triple>
       <div>
-        <h2>Symbiote.js 2.2 is out now!</h2>
+        <h2>Symbiote.js 2.3.x is out now!</h2>
         <h3>What's new?</h3>
       </div>
     </card-el>
