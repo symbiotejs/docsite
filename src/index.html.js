@@ -51,7 +51,7 @@ ${head(undefined, '<script src="./2x/js/index.js" type="module"></script>')}
     <card-el double clr-3>Sponsorship</card-el>
   </a>
 
-  <a href="#solution">
+  <a href="https://rnd-pro.com/" target="_blank">
     <card-el triple>Request solution</card-el>
   </a>
 
