@@ -1,7 +1,3 @@
-import logo from '../../svg/logo/index.svg.js';
-
-let b64Logo = btoa(logo(72));
-
 /**
  * 
  * @param {String} [base] 
@@ -20,7 +16,7 @@ export default function(base = './') {
     <meta property="og:description" content="Symbiote.js - ultralight and ultrapowerful library to create widgets, organise micro-frontends, build reusable embeddable components and libraries.">
     <meta property="og:title" content="Symbiote.js">
     <meta name="twitter:title" content="Symbiote.js">
-    <link rel="icon" href="data:image/svg+xml;base64,${b64Logo}">
+    <link rel="icon" href="../svg/logo/index.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">

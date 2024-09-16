@@ -1,5 +1,4 @@
 import { NAV } from '../data/nav.js';
-import logo from '../../svg/logo/index.svg.js';
 
 let menuHtml = '';
 for (let section in NAV) {
@@ -9,9 +8,7 @@ for (let section in NAV) {
 
 export default /*html*/ `
 <a href="./">
-  <div logo>
-    ${logo(60)}
-  </div>
+  <div logo><img width="60" src="../svg/logo/index.svg"></div>
 </a>
 <menu>${menuHtml}</menu>
 `;
