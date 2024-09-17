@@ -1,0 +1,23 @@
+<smart-textarea>
+  <textarea 
+    bind="oninput: saveSourceText"
+    placeholder="AI assisted text input..." 
+    ref="text"></textarea>
+
+  <input 
+    type="text" 
+    placeholder="Preferred Language" 
+    ref="lang">
+
+  <label>Text style: {{+currentTextStyle}}</label>
+  <input 
+    bind="onchange: onTextStyleChange"
+    type="range" 
+    min="1"
+    max="7"
+    step="1"
+    ref="textStyleRange">
+
+  <button bind="onclick: askAi">Rewrite text</button>
+  <button bind="onclick: revertChanges">Revert AI changes</button>
+</smart-textarea>

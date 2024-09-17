@@ -57,6 +57,7 @@ export default /*html*/ `
       <li><a href="./2x/playground/icons/" target="_blank">Icons</a></li>
       <li><a href="./2x/playground/icons-2/" target="_blank">Icons 2</a></li>
       <li><a href="./2x/playground/wgt-routing/" target="_blank">Widget routing</a></li>
+      <li><a href="./2x/playground/smart-textarea/" target="_blank">Smart textarea</a></li>
       <!-- <li><a href="./2x/playground/ssr-css/" target="_blank">SSR + CSS Data</a></li> -->
     </ul>
   </section-inner>
