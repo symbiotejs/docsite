@@ -138,6 +138,7 @@ card-el[logo] img {
 
 [clr-1] {
   background-color: rgba(255, 255, 255, .1);
+  color: #fff;
 }
 [clr-2] {
   background-color: #00aba9;
