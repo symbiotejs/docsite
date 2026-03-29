@@ -18,6 +18,6 @@
   },
   "devDependencies": {
     "@symbiotejs/symbiote": "^2.0.2",
-    "esbuild": "^0.17.10"
+    "esbuild": "^0.25.0"
   }
 }
