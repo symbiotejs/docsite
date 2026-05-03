@@ -1,8 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "build": "jsda build",
-    "dev": "node ./watch.js"
+    "build": "jsda build"
   },
   "dependencies": {
     "jsda-kit": "^1.4.0"

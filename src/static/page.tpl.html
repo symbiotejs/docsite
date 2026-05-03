@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{[TITLE]}</title>
+  <style>
+    :root {
+      --clr-1: #f5f5f5;
+      --clr-2: #1a1a2e;
+      --primary: #0077cc;
+      --warn: #ff7700;
+      --gap-max: 20px;
+      --col-w: 960px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: var(--clr-1);
+      color: var(--clr-2);
+    }
+    main {
+      max-width: var(--col-w);
+      margin: 0 auto;
+      padding: var(--gap-max);
+    }
+    a { color: var(--primary); }
+    pre {
+      background: var(--clr-2);
+      color: var(--clr-1);
+      padding: 1em;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code { font-family: ui-monospace, monospace; }
+    blockquote {
+      display: block;
+      border: 2px solid var(--warn);
+      border-radius: 12px;
+      padding: .5em 1em;
+      margin: 0;
+      font-size: 1.2em;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, .2);
+    }
+  </style>
+</head>
+<body>
+  <main>{[CONTENT]}</main>
+</body>
+</html>
