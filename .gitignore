@@ -13,3 +13,5 @@
 TMP
 dist
 COMMON.md
+
+.project-graph-cache.json
