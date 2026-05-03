@@ -19,7 +19,7 @@ ${head('./')}
   <header>${header}</header>
   <main>
     <column-el>
-      <a href="../" banner-new>The new version 2.x is out now!</a>
+      <a href="https://rnd-pro.com/symbiote/" banner-new>The new version 2.x is out now!</a>
       <promo-el use-bg>
         <div promo>
           <div>Light</div>
