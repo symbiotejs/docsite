@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "build": "jsda build"
+    "build": "jsda build && cp ./dist/index.html ./dist/404.html"
   },
   "dependencies": {
     "jsda-kit": "^1.4.0"
